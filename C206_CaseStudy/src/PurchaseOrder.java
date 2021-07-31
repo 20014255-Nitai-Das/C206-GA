@@ -7,6 +7,6 @@
  * 20007603, 31 Jul 2021 5:12:57 pm
  */
 
-public class Ingredients {
+public class PurchaseOrder {
 
 }
