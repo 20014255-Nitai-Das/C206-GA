@@ -4,9 +4,7 @@ public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
+
 		// FOOD 
 		ArrayList<Food> foodList = new ArrayList<Food>();
 		
@@ -18,7 +16,7 @@ public class C206_CaseStudy {
 		int option = 0;
 		
 		while (option != 5) {
-=======
+
 	 int options = 0;
 	 
 	 while(options != 5) {
@@ -28,16 +26,11 @@ public class C206_CaseStudy {
 		
 	}
 	private void menu() { 
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-=======
-		int options = 0;
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 
-<<<<<<< HEAD
+		int options = 0;
+
 		while (options != 4) {
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 			C206_CaseStudy.menu();
 			option = Helper.readInt("Enter an option > ");
 
@@ -99,13 +92,11 @@ public class C206_CaseStudy {
 	
 	private static void deleteFood(ArrayList<Food> foodList) {
 		// TODO Auto-generated method stub
-=======
+
 		String title = " Ca ";
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-		
-=======
+
 		while (options != 5) {
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+
 			menu();
 			options += Helper.readInt("Enter your option > ");
 
@@ -157,7 +148,7 @@ public class C206_CaseStudy {
 		System.out.println("4. Promotions ");
 	}
 
-<<<<<<< HEAD
+
 	public static void deleteMenu() {
 		Helper.line(50, "-");
 		System.out.println("Delete Menu");
@@ -170,11 +161,9 @@ public class C206_CaseStudy {
 	
 	public static void addFood() {
 		
-=======
-	private static void deleteMenu() {
 
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+
+
 	}
 
 
@@ -186,14 +175,8 @@ public class C206_CaseStudy {
 
 
 	
-	private static void menu() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
-	private static void setHeader(String string) {
-		// TODO Auto-generated method stub
-		
-	}
+
+	
 }

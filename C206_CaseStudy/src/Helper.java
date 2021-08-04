@@ -125,6 +125,11 @@ public class Helper {
     }
     return date;
   }
+
+public static void line(int i, String string) {
+	// TODO Auto-generated method stub
+	
+}
 =======
 
 
