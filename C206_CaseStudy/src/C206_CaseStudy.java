@@ -2,8 +2,10 @@ import java.util.ArrayList;
 
 public class C206_CaseStudy {
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		
 		// FOOD 
 		ArrayList<Food> foodList = new ArrayList<Food>();
@@ -16,7 +18,19 @@ public class C206_CaseStudy {
 		int option = 0;
 		
 		while (option != 5) {
+=======
+	 int options = 0;
+	 
+	 while(options != 5) {
+		 
+	 }
+		
+		
+	}
+	private void menu() { 
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 
+<<<<<<< HEAD
 			C206_CaseStudy.menu();
 			option = Helper.readInt("Enter an option > ");
 
@@ -78,6 +92,9 @@ public class C206_CaseStudy {
 	
 	private static void deleteFood(ArrayList<Food> foodList) {
 		// TODO Auto-generated method stub
+=======
+		String title = " Ca ";
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		
 	}
 
