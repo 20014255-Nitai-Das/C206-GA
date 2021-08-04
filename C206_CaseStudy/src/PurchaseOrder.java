@@ -12,11 +12,15 @@ public class PurchaseOrder {
 
 	private int orderNumber;
 	private String orderDate;
+	private String ingrDesc;
+	private int ingrAmt;
 	
-	public PurchaseOrder(int orderNumber, String orderDate) {
+	public PurchaseOrder(int orderNumber, String orderDate, String ingrDesc, int ingrAmt) {
 		
 		this.orderNumber = orderNumber;
 		this.orderDate = orderDate;
+		this.ingrDesc = ingrDesc;
+		this.ingrAmt = ingrAmt;
 	}
 
 	public int getOrderNumber() {
@@ -34,7 +38,22 @@ public class PurchaseOrder {
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
-	
+
+	public String getIngrDesc() {
+		return ingrDesc;
+	}
+
+	public void setIngrDesc(String ingrDesc) {
+		this.ingrDesc = ingrDesc;
+	}
+
+	public int getIngrAmt() {
+		return ingrAmt;
+	}
+
+	public void setIngrAmt(int ingrAmt) {
+		this.ingrAmt = ingrAmt;
+	}
 	
 	
 	

@@ -5,17 +5,26 @@ public class C206_CaseStudy {
 		// TODO Auto-generated method stub
 		int options = 0;
 
-		while (options != 5) {
+		while (options != 4) {
 			menu();
 			options += Helper.readInt("Enter your option > ");
-			
-			if (options == 1){
-				
+
+			if (options == 1) {
+				viewMenu();
+			}
+			if (options == 2) {
+				addMenu();
+			}
+			if (options == 3) {
+				deleteMenu();
+			}
+			else {
+				System.out.println("invalid option!");
 			}
 		}
 	}
 
-	private static void menu() {
+	public static void menu() {
 		Helper.line(50, "-");
 		System.out.println("Canteen Automation System");
 		Helper.line(50, "-");
@@ -27,22 +36,39 @@ public class C206_CaseStudy {
 
 	}
 
-	private static void viewMenu() {
+	public static void viewMenu() {
 		Helper.line(50, "-");
 		System.out.println("View Menu");
 		Helper.line(50, "-");
 		System.out.println("1. Food");
 		System.out.println("2. Purchase Order");
-		System.out.println("3. ");
-		System.out.println("4. Quit");
+		System.out.println("3. Stall ");
+		System.out.println("4. Promotions ");
+		
 	}
 
-	private static void addMenu() {
-
+	public static void addMenu() {
+		Helper.line(50, "-");
+		System.out.println("Add Menu");
+		Helper.line(50, "-");
+		System.out.println("1. Food");
+		System.out.println("2. Purchase Order");
+		System.out.println("3. Stall ");
+		System.out.println("4. Promotions ");
 	}
 
-	private static void deleteMenu() {
-
+	public static void deleteMenu() {
+		Helper.line(50, "-");
+		System.out.println("Delete Menu");
+		Helper.line(50, "-");
+		System.out.println("1. Food");
+		System.out.println("2. Purchase Order");
+		System.out.println("3. Stall ");
+		System.out.println("4. Promotions ");
+	}
+	
+	public static void addFood() {
+		
 	}
 
 }
