@@ -64,7 +64,7 @@ public class C206_CaseStudyCodes {
 
 						int smOption = 0;
 
-						while (smOption != 5) {
+						while (smOption != 6) {
 							smOption = Helper.readInt("Enter your option > ");
 
 							if (smOption == 1) {
@@ -73,10 +73,14 @@ public class C206_CaseStudyCodes {
 								viewStall();
 							} else if (smOption == 3) {
 								deleteStall();
+							} else if (smOption == 4) {
+								updateStall();
+							} else if (smOption == 5) {
+								System.out.println("Goodbye!");
 							} else {
 								System.out.println("Invalid option!");
 							}
-
+							
 							
 						}
 					} else {
@@ -386,6 +390,29 @@ public class C206_CaseStudyCodes {
 				stallList.remove(stall);
 				System.out.println("Stall Name:" + stall.getName() + " has been deleted successfully.");
 			}			
+			else {
+				System.out.println("Invalid Stall Name !");
+			}
+		}
+	}
+	
+	public static void updateStall() {   // Update Stall
+		Helper.line(50, "-");
+		System.out.println("Update Stall Name");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String updateName = Helper.readString("Enter Current Stall Name > ");
+
+		for (Stall stall : stallList) {
+			if (updateName == stall.getName()) {
+
+				String newName = Helper.readString("Enter New Stall Name > ");
+
+				stall.setName(newName);
+
+				System.out.println("Name successfully updated!");
+			} 
 			else {
 				System.out.println("Invalid Stall Name !");
 			}
