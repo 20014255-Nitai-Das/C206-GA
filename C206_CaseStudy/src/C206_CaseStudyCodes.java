@@ -91,10 +91,14 @@ public class C206_CaseStudyCodes {
 
 	}
 
-	public static void CanAdmMenu() {
+	public static void CanAdmMenu() { // FOOD 
 		Helper.line(50, "-");
 		System.out.println("Canteen Administrator Menu");
 		Helper.line(50, "-");
+		System.out.println("1. Add Food Item");
+		System.out.println("2. View Food Item");
+		System.out.println("3. Delete Food Item");
+		System.out.println("4. Quit");
 
 	}
 
