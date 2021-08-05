@@ -3,6 +3,7 @@ public class Food {  // Done by Jolin
 	
 	private String name; 
 	private double price; 
+	private String stall;
 	
 	public Food(String name, double price) {
 		this.name = name;
@@ -24,5 +25,16 @@ public class Food {  // Done by Jolin
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	public String getStall() {
+		return stall;
+	}
+
+	public void setStall(String stall) {
+		this.stall = stall;
+	}
 	
 }
+
+
+
