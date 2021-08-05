@@ -52,6 +52,8 @@ public class C206_CaseStudyCodes {
 								viewFood();
 							} else if (fimOption == 3) {
 								deleteFood();
+							} else if (fimOption == 4) {
+								editFood();
 							} else {
 								System.out.println("Invalid option!");
 							}
@@ -140,13 +142,14 @@ public class C206_CaseStudyCodes {
 
 	public static void FoodItemMenu() {
 		Helper.line(50, "-");
-		System.out.println("Food Item  Menu");
+		System.out.println("Food Item Menu");
 		Helper.line(50, "-");
 
 		System.out.println();
 		System.out.println("1. Add Food Item");
 		System.out.println("2. View Food Item");
 		System.out.println("3. Delete Food Item");
+		System.out.println("4. Edit Food Item");
 	}
 
 	public static void StallMenu() {
@@ -269,10 +272,9 @@ public class C206_CaseStudyCodes {
 	}
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	// Codes for Food
+	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	// Jolin
 	public static void addFood() {
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
@@ -288,7 +290,6 @@ public class C206_CaseStudyCodes {
 		System.out.println("Food item was added succesfully!");
 	}
 
-	// Jolin
 	public static void viewFood() {
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
@@ -301,7 +302,6 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 
-	// Jolin
 	public static void deleteFood() {
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
