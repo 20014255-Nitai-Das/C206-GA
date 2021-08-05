@@ -44,13 +44,13 @@ public class C206_CaseStudyCodes {
 
 							fimOption = Helper.readInt("Enter you option > ");
 							if (fimOption == 1) {
-
+								addFood();
 							} else if (fimOption == 2) {
-
+								viewFood();
 							} else if (fimOption == 3) {
-
-							} else if (fimOption == 4) {
-
+								deleteFood();
+							} else {
+								System.out.println("Invalid option!");
 							}
 
 						}
