@@ -282,7 +282,7 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		String name = Helper.readString("Enter the name of the food > ");
-		double price = Helper.readDouble("Enter the price of the food > ");
+		double price = Helper.readDouble("Enter the price of the food > $");
 
 		Food fd = new Food(name, price);
 		foodList.add(fd);
@@ -318,6 +318,29 @@ public class C206_CaseStudyCodes {
 				System.out.println("The name of the food item is invalid!");
 			}
 		}
+	}
+	
+	public static void editFood() {
+		Helper.line(50, "-");
+		System.out.println("Edit Food Item");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String nameToEdit = Helper.readString("Enter the name of the food item you would like to edit > ");
+
+		for (Food fd : foodList) {
+			if (nameToEdit == fd.getName()) {
+
+				double newSellingPrice = Helper.readDouble("Enter the new selling price > $");
+
+				fd.setPrice(newSellingPrice);
+
+				System.out.println("Changes made!");
+			} else {
+				System.out.println("Invalid Food Item!");
+			}
+		}
+		
 	}
 
 	//Codes for Stall (Crystal)
