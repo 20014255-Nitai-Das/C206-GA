@@ -37,11 +37,10 @@ public class C206_CaseStudyCodes {
 						viewFood();
 					} 
 					else if (caOption == 3) {
-//						deletePurchaseOrder();
+						deleteFood();
 					} else {
 						System.out.println("Invalid option!");
 					}
-					
 				}
 			
 			}
@@ -194,7 +193,7 @@ public class C206_CaseStudyCodes {
 	
 	public static void addFood() { // FOOD 
 		Helper.line(50, "-");
-		System.out.println("Add Food item");
+		System.out.println("Add Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
@@ -204,12 +203,12 @@ public class C206_CaseStudyCodes {
 		Food fd = new Food(name, price); 
 		foodList.add(fd);
 
-		System.out.println("Food item Added!");
+		System.out.println("Food item was added succesfully!");
 	}
 	
 	public static void viewFood() { // FOOD
 		Helper.line(50, "-");
-		System.out.println("View Food item");
+		System.out.println("View Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
@@ -218,6 +217,24 @@ public class C206_CaseStudyCodes {
 			output += String.format("%-10s %-20.2f\n", fd.getName(), fd.getPrice());
 		}
 		System.out.println(output);
+	}
+	
+	public static void deleteFood() { // FOOD 
+		Helper.line(50, "-");
+		System.out.println("Delete Food Item");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
+
+		for (Food fd : foodList) {
+			if (nameToDelete == fd.getName()) {
+				foodList.remove(fd);
+				System.out.println("Food Item named " + fd.getName() + " has been deleted");
+			}else {
+				System.out.println("The name of the food item is invalid!");
+			}
+		}
 	}
 
 }
