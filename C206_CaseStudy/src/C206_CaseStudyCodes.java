@@ -3,11 +3,20 @@ import java.util.ArrayList;
 public class C206_CaseStudyCodes {
 
 	public static  final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
-
+	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
+	
 	public static void main(String[] args) {
 
 		PurchaseOrder po1 = new PurchaseOrder(12345, "07/05/2021", "Vegetables", 10);
 		poList.add(po1);
+		
+		Food f1 = new Food("Curry Puff", 1.50);
+		Food f2 = new Food("Fried Rice", 3.50);
+		Food f3 = new Food("Sushi", 2.00);
+		foodList.add(f1);
+		foodList.add(f2);
+		foodList.add(f3);
+		
 		int option = 0;
 
 		while (option != 4) {
