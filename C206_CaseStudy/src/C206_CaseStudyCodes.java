@@ -7,8 +7,7 @@ public class C206_CaseStudyCodes {
 	
 	public static void main(String[] args) {
 
-		PurchaseOrder po1 = new PurchaseOrder(12345, "07/05/2021", "Vegetables", 10);
-		poList.add(po1);
+		
 		
 		Food f1 = new Food("Curry Puff", 1.50);
 		Food f2 = new Food("Fried Rice", 3.50);
@@ -139,15 +138,13 @@ public class C206_CaseStudyCodes {
 		for (PurchaseOrder po : poList) {
 			if (userOrderNum == po.getOrderNumber()) {
 
-				int newOrdNum = Helper.readInt("Enter New Order Number > ");
-				String newOrdDate = Helper.readString("Enter New Order Date (dd/mm/yyyy) > ");
+				
 				String newIngrDesc = Helper.readString("Enter New ingredients Description > ");
-				int newIngrAmt = Helper.readInt("Enter New ingredients amount > ");
+				
 
-				po.setOrderNumber(newOrdNum);
-				po.setOrderDate(newOrdDate);
+				
 				po.setIngrDesc(newIngrDesc);
-				po.setIngrAmt(newIngrAmt);
+				
 				System.out.println("Changes made!");
 			} else {
 				System.out.println("Invalid Purchase Order Number!");
