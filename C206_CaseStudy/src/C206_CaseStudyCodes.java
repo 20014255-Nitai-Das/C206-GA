@@ -4,6 +4,7 @@ public class C206_CaseStudyCodes {
 
 	public static  final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
 	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
+	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
 	
 	public static void main(String[] args) {
 
@@ -76,8 +77,32 @@ public class C206_CaseStudyCodes {
 			}else {
 				System.out.println("Invalid option!");
 			}
-		}
+		}	
+	
+	
+		else if (option == 4) {
+
+			int stallOption = 0;
+
+			while (stallOption != 5) {
+
+				stallOption = Helper.readInt("Enter option > ");
+
+				if(stallOption == 1) {
+					addStall();
+			}
+				else if(stallOption == 2) {
+					viewStall();					
+			}
+				else if(stallOption == 3) {
+					deleteStall();
+			}
+				else {
+					System.out.println("Invalid option!");
+			}
+		}	
 	}
+}
 
 	public static void userMenu() {
 
@@ -115,6 +140,17 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println("Customer Menu");
 		Helper.line(50, "-");
+
+	}
+	
+	public static void Stall() {
+		Helper.line(50, "-");
+		System.out.println("Stall");
+		Helper.line(50, "-");
+		System.out.println("1. Add a New Stall");
+		System.out.println("2. View an Existing Stall ");
+		System.out.println("3. Delete an Existing Stall");
+		System.out.println("4. Quit");
 
 	}
 
@@ -247,4 +283,53 @@ public class C206_CaseStudyCodes {
 		}
 	}
 
+	//Codes for Stall (Crystal)
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public static void addStall() {   // Add Stall
+		Helper.line(50, "-");
+		System.out.println("Add New Stall");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String name = Helper.readString("Enter stall name > ");
+		String startDate = Helper.readString("Enter Start date > (dd/mm/yy) ");
+
+		Stall newStall = new Stall(name, startDate); 
+		stallList.add(newStall);
+
+		System.out.println("Stall was added succesfully!");
+	}
+	
+	public static void viewStall() {   // View Stall
+		Helper.line(50, "-");
+		System.out.println("View Existing Stall");
+		Helper.line(50, "-");
+
+		System.out.printf("%-10s %-30s \n", "NAME", "START DATE");
+		
+		for (Stall stall : stallList) {
+			System.out.printf("%-10s %-30s \n", stall.getName(), stall.getStartDate());
+		}
+	}
+	
+	
+	public static void deleteStall() {   // Delete Stall
+		Helper.line(50, "-");
+		System.out.println("Delete Exisiting Stall");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String deleteStall = Helper.readString("Enter Stall Name to Delete > ");
+
+		for (Stall stall : stallList) {
+			if (deleteStall == stall.getName()) {
+				stallList.remove(stall);
+				System.out.println("Stall Name:" + stall.getName() + " has been deleted successfully.");
+			}			
+			else {
+				System.out.println("Invalid Stall Name !");
+			}
+		}
+	}
 }
+
