@@ -119,6 +119,10 @@ public class C206_CaseStudyCodes {
 
 	}
 
+	//Nitai
+	
+	//Codes for Purchase Order 
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	public static void addPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
@@ -136,7 +140,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("Purchase Order Added!");
 
 	}
-
+	//Nitai
 	public static void viewPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
@@ -150,7 +154,7 @@ public class C206_CaseStudyCodes {
 		}
 		System.out.println(output);
 	}
-
+	//Nitai
 	public static void editPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("Edit Purchase Order");
@@ -176,7 +180,7 @@ public class C206_CaseStudyCodes {
 		}
 
 	}
-
+	//Nitai
 	public static void deletePurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("Delete Purchase Order");
@@ -194,7 +198,7 @@ public class C206_CaseStudyCodes {
 			}
 		}
 	}
-	
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	public static void addFood() { // FOOD 
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
