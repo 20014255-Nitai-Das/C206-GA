@@ -23,9 +23,30 @@ public class C206_CaseStudyCodes {
 			C206_CaseStudyCodes.userMenu();
 			option = Helper.readInt("Enter your choice > ");
 
-			if (option == 1) {
-				CanAdmMenu();
+			if (option == 1) { // Food
+				
+				int caOption = 0;
+
+				while (caOption != 5) {
+					CanAdmMenu();
+					caOption = Helper.readInt("Enter option > ");
+
+					if (caOption == 1) {
+						addFood();
+					} 
+					else if (caOption == 2) {
+//						viewFood();
+					} 
+					else if (caOption == 3) {
+//						deletePurchaseOrder();
+					} else {
+						System.out.println("Invalid option!");
+					}
+					
+				}
+			
 			}
+			
 			else if (option == 2) {
 
 				int ssOption = 0;
@@ -172,6 +193,22 @@ public class C206_CaseStudyCodes {
 				System.out.println("Invalid Purchase Order Number!");
 			}
 		}
+	}
+	
+	public static void addFood() { // FOOD 
+		Helper.line(50, "-");
+		System.out.println("Add Food item");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String name = Helper.readString("Enter the name of the food > ");
+		double price = Helper.readDouble("Enter the price of the food > ");
+
+		Food fd = new Food(name, price); 
+		foodList.add(fd);
+
+		System.out.println("Food item Added!");
+
 	}
 
 }
