@@ -6,12 +6,23 @@ public class PurchaseOrder {
 	private String ingrDesc;
 	private int ingrAmt;
 	
-	public PurchaseOrder(int orderNumber, String orderDate, String ingrDesc, int ingrAmt) {
+	private String stallName = Stall.class.getName();
+
+	public PurchaseOrder(int orderNumber, String orderDate, String ingrDesc, int ingrAmt, String stallName) {
 		
 		this.orderNumber = orderNumber;
 		this.orderDate = orderDate;
 		this.ingrDesc = ingrDesc;
 		this.ingrAmt = ingrAmt;
+		this.stallName = stallName;
+	}
+
+	public String getStallName() {
+		return stallName;
+	}
+
+	public void setStallName(String stallName) {
+		this.stallName = stallName;
 	}
 
 	public int getOrderNumber() {

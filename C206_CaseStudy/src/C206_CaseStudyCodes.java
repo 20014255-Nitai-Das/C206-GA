@@ -27,7 +27,7 @@ public class C206_CaseStudyCodes {
 		int option = 0;
 
 		while (option != 4) {
-			C206_CaseStudyCodes.userMenu();
+			userMenu();
 			option = Helper.readInt("Enter your choice > ");
 
 			if (option == 1) {
