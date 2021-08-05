@@ -204,12 +204,14 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println();
 
+		String name = Helper.readString("Enter Stall Name > ");
 		int ordNum = Helper.readInt("Enter Order Number > ");
 		String ordDate = Helper.readString("Enter Order Date (dd/mm/yyyy) > ");
 		String ingrDesc = Helper.readString("Enter ingredients Description > ");
 		int ingrAmt = Helper.readInt("Enter ingredients amount > ");
+		
 
-		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, ingrAmt);
+		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, ingrAmt, name);
 		poList.add(po);
 
 		System.out.println("Purchase Order Added!");
@@ -223,9 +225,9 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println();
 
-		String output = String.format("%-10s %-20s %-20s %-20s \n", "Order No", "Order Date", "Description", "Amount");
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s \n","Stall Name", "Order No", "Order Date", "Description", "Amount");
 		for (PurchaseOrder po : poList) {
-			output += String.format("%-10d %-20s %-20s %-20d \n", po.getOrderNumber(), po.getOrderDate(),
+			output += String.format("%-20s %-20d %-20s %-20s %-20d \n", po.getStallName(), po.getOrderNumber(), po.getOrderDate(),
 					po.getIngrDesc(), po.getIngrAmt());
 		}
 		System.out.println(output);
