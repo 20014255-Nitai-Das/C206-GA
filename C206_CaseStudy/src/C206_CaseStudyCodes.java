@@ -22,7 +22,7 @@ public class C206_CaseStudyCodes {
 			C206_CaseStudyCodes.userMenu();
 			option = Helper.readInt("Enter your choice > ");
 
-			if (option == 1) { // Food
+			if (option == 1) { 
 				
 				int caOption = 0;
 
@@ -199,10 +199,11 @@ public class C206_CaseStudyCodes {
 	}
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	// Codes for Food (Jolin)
+	// Codes for Food 
 	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-	public static void addFood() { // FOOD 
+	//Jolin
+	public static void addFood() { 
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -217,7 +218,8 @@ public class C206_CaseStudyCodes {
 		System.out.println("Food item was added succesfully!");
 	}
 	
-	public static void viewFood() { // FOOD
+	//Jolin
+	public static void viewFood() { 
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
@@ -229,7 +231,8 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 	
-	public static void deleteFood() { // FOOD 
+	//Jolin
+	public static void deleteFood() { 
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
