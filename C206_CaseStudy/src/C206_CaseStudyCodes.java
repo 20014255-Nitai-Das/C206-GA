@@ -6,13 +6,16 @@ public class C206_CaseStudyCodes {
 	public static  final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
 	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
 	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
-	
-
-//	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
-//	public static final ArrayList<Food> foodList = new ArrayList<Food>();
 
 
 	public static void main(String[] args) {
+		
+		Stall s1 = new Stall("Curry Puff", "05/06/2021");
+		Stall s2 = new Stall("Fried Rice", "03/04/2021");
+		Stall s3 = new Stall("Sushi Express", "01/02/2021");
+		stallList.add(s1);
+		stallList.add(s2);
+		stallList.add(s3);
 
 		Food f1 = new Food("Curry Puff", 1.50);
 		Food f2 = new Food("Fried Rice", 3.50);
@@ -63,14 +66,12 @@ public class C206_CaseStudyCodes {
 							smOption = Helper.readInt("Enter your option > ");
 
 							if (smOption == 1) {
-
+								addStall();
 							} else if (smOption == 2) {
-
+								viewStall();
 							} else if (smOption == 3) {
-
-							} else if (smOption == 4) {
-								
-							}else {
+								deleteStall();
+							} else {
 								System.out.println("Invalid option!");
 							}
 
@@ -341,10 +342,10 @@ public class C206_CaseStudyCodes {
 		System.out.println("View Existing Stall");
 		Helper.line(50, "-");
 
-		System.out.printf("%-10s %-30s \n", "NAME", "START DATE");
+		System.out.printf("%-10s %-40s \n", "NAME", "START DATE");
 		
 		for (Stall stall : stallList) {
-			System.out.printf("%-10s %-30s \n", stall.getName(), stall.getStartDate());
+			System.out.printf("%-10s %-40s \n", stall.getName(), stall.getStartDate());
 		}
 	}
 	
