@@ -34,7 +34,7 @@ public class C206_CaseStudyCodes {
 						addFood();
 					} 
 					else if (caOption == 2) {
-//						viewFood();
+						viewFood();
 					} 
 					else if (caOption == 3) {
 //						deletePurchaseOrder();
@@ -205,7 +205,19 @@ public class C206_CaseStudyCodes {
 		foodList.add(fd);
 
 		System.out.println("Food item Added!");
+	}
+	
+	public static void viewFood() { // FOOD
+		Helper.line(50, "-");
+		System.out.println("View Food item");
+		Helper.line(50, "-");
+		System.out.println();
 
+		String output = String.format("%-10s %-20s\n", "Name of Food", "Price");
+		for (Food fd : foodList) {
+			output += String.format("%-10s %-20.2f\n", fd.getName(), fd.getPrice());
+		}
+		System.out.println(output);
 	}
 
 }
