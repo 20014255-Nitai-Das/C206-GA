@@ -91,14 +91,13 @@ public class C206_CaseStudyCodes {
 
 	}
 
-	public static void CanAdmMenu() { // FOOD 
+	public static void CanAdmMenu() { 
 		Helper.line(50, "-");
 		System.out.println("Canteen Administrator Menu");
 		Helper.line(50, "-");
 		System.out.println("1. Add Food Item");
 		System.out.println("2. View Food Item");
 		System.out.println("3. Delete Food Item");
-		System.out.println("4. Quit");
 
 	}
 
@@ -222,11 +221,10 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
-		System.out.println();
 
-		String output = String.format("%-10s %-20s\n", "Name of Food", "Price");
+		String output = String.format("%-15s %-20s\n", "Name of Food", "Price");
 		for (Food fd : foodList) {
-			output += String.format("%-10s %-20.2f\n", fd.getName(), fd.getPrice());
+			output += String.format("%-15s $%-20.2f\n", fd.getName(), fd.getPrice());
 		}
 		System.out.println(output);
 	}
