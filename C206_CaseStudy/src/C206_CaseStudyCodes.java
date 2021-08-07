@@ -198,7 +198,8 @@ public class C206_CaseStudyCodes {
 
 	// Codes for Purchase Order (Nitai)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public static void addPurchaseOrder() {
+	private static final ArrayList<String> ingrList = new ArrayList<String>();
+		public static void addPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
 		Helper.line(50, "-");
@@ -213,8 +214,11 @@ public class C206_CaseStudyCodes {
 
 		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, ingrAmt, name);
 		poList.add(po);
+		po.countLesser();
 
 		System.out.println("Purchase Order Added!");
+		
+		
 
 	}
 

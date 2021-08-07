@@ -5,18 +5,24 @@ public class PurchaseOrder {
 	private String orderDate;
 	private String ingrDesc;
 	private int ingrAmt;
+	private int count = 8;
 	
 	private String stallName = Stall.class.getName();
 
-	public PurchaseOrder(int orderNumber, String orderDate, String ingrDesc, int ingrAmt, String stallName) {
+	public PurchaseOrder(int orderNumber, String stallName ,String orderDate, String ingrDesc, int ingrAmt) {
 		
 		this.orderNumber = orderNumber;
+		this.stallName = stallName;
 		this.orderDate = orderDate;
 		this.ingrDesc = ingrDesc;
 		this.ingrAmt = ingrAmt;
-		this.stallName = stallName;
+		
 	}
 
+	public int countLesser() {
+		count --;
+		return count;
+	}
 	public String getStallName() {
 		return stallName;
 	}
