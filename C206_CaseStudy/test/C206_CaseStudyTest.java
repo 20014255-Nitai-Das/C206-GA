@@ -49,40 +49,28 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that PurchaseOrder arraylist size is 2", 2, poList.size());
 		assertSame("test that PurchaseOrder is added", po2, poList.get(1));
 
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po3);
-		assertEquals("Test that PurchaseOrder arraylist size is 3", 3, poList.size());
-		assertSame("test that PurchaseOrder is added", po3, poList.get(2));
+	}
 
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po4);
-		assertEquals("Test that PurchaseOrder arraylist size is 4", 4, poList.size());
-		assertSame("test that PurchaseOrderk is added", po4, poList.get(3));
+	public void testRetrieveAllPurchaseOrder() {
+		assertNotNull("Test if there is valid PurchaseOrder arraylist to retrieve purchase ordersfrom", poList);
 
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po5);
-		assertEquals("Test that PurchaseOrder arraylist size is 5", 5, poList.size());
-		assertSame("test that PurchaseOrder is added", po5, poList.get(4));
+		String allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
+		String testOutput = "";
+		assertEquals("Test that the retrieved PurchaseOrderlist is empty?", testOutput, allPurchaseOrder);
 
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po6);
-		assertEquals("Test that PurchaseOrder arraylist size is 6", 6, poList.size());
-		assertSame("test that PurchaseOrder is added", po6, poList.get(5));
-
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po7);
-		assertEquals("Test that PurchaseOrder arraylist size is 7", 7, poList.size());
-		assertSame("test that PurchaseOrder is added", po7, poList.get(6));
-
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po8);
-		assertEquals("Test that PurchaseOrder arraylist size is 8", 8, poList.size());
-		assertSame("test that PurchaseOrder is added", po8, poList.get(7));
-
-		// Error condition
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po9);
-		assertEquals("Test that PurchaseOrder arraylist size is 9", 9, poList.size());
-		assertSame("test that PurchaseOrder is not added", po9, poList.get(8));
-
+		allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
+		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 1, "Sushi", "07/08/2021", "Rice", 2);
+		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicken", 5);
+		assertEquals("Test that ViewAllPurchaseOrder",testOutput,allPurchaseOrder);
 	}
 
 	public void testEditPurchaseOrder() {
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to add to", poList);
 
+	}
+	
+	public void testDeletePurchaseOrder() {
+		
 	}
 
 	@After
@@ -96,7 +84,7 @@ public class C206_CaseStudyTest {
 		po7 = null;
 		po8 = null;
 		po9 = null;
-		
+
 		poList = null;
 
 	}
@@ -105,6 +93,7 @@ public class C206_CaseStudyTest {
 	public void c206_test() {
 		// fail("Not yet implemented");
 		assertTrue("C206_CaseStudy_SampleTest ", true);
+		
 	}
 
 }
