@@ -9,7 +9,7 @@ public class C206_CaseStudyCodes {
 
 
 	public static void main(String[] args) {
-		 ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
+		 ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 		
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
 		Stall s2 = new Stall("Fried Rice", "03/04/2021");
@@ -103,6 +103,7 @@ public class C206_CaseStudyCodes {
 						PurchaseOrder po = inputPurchaseOrder();
 						addPurchaseOrder(poList, po);
 					} else if (ssOption == 2) {
+						retrieveAllPurchaseOrder(poList);
 						viewPurchaseOrder(poList);
 					} else if (ssOption == 3) {
 						editPurchaseOrder(poList);
@@ -213,20 +214,30 @@ public class C206_CaseStudyCodes {
 		String ingrDesc = Helper.readString("Enter ingredients Description > ");
 		int ingrAmt = Helper.readInt("Enter ingredients amount > ");
 		
+		
 		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, name, ingrAmt);
 		return po;
 		
 	}
 		public static void addPurchaseOrder(ArrayList<PurchaseOrder> poList, PurchaseOrder po) {
-		
-
+	
 		
 		poList.add(po);
+		
 
 		System.out.println("Purchase Order Added!");
 		
 		
 
+	}
+	public static  String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList) {
+		String output ="";
+		
+		for (PurchaseOrder po : poList) {
+			output += String.format("%-20s %-20d %-20s %-20s %-20d \n", po.getStallName(), po.getOrderNumber(), po.getOrderDate(),
+					po.getIngrDesc(), po.getIngrAmt());
+		}
+		return output;
 	}
 
 
@@ -237,10 +248,9 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		String output = String.format("%-20s %-20s %-20s %-20s %-20s \n","Stall Name", "Order No", "Order Date", "Description", "Amount");
-		for (PurchaseOrder po : poList) {
-			output += String.format("%-20s %-20d %-20s %-20s %-20d \n", po.getStallName(), po.getOrderNumber(), po.getOrderDate(),
-					po.getIngrDesc(), po.getIngrAmt());
-		}
+	
+		output += retrieveAllPurchaseOrder(poList);
+	
 		System.out.println(output);
 	}
 

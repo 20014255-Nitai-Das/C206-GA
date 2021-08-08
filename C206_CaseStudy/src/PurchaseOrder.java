@@ -5,7 +5,7 @@ public class PurchaseOrder {
 	private String orderDate;
 	private String ingrDesc;
 	private int ingrAmt;
-	private int count = 8;
+	
 	
 	private String stallName = Stall.class.getName();
 
@@ -19,10 +19,8 @@ public class PurchaseOrder {
 		
 	}
 
-	public int countLesser() {
-		count --;
-		return count;
-	}
+	
+	
 	public String getStallName() {
 		return stallName;
 	}
