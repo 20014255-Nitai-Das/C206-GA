@@ -3,12 +3,13 @@ import java.util.ArrayList;
 public class C206_CaseStudyCodes {
 
 
-	public static  final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
+	
 	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
 	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
 
 
 	public static void main(String[] args) {
+		 ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
 		
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
 		Stall s2 = new Stall("Fried Rice", "03/04/2021");
@@ -99,13 +100,14 @@ public class C206_CaseStudyCodes {
 					ssOption = Helper.readInt("Enter option > ");
 
 					if (ssOption == 1) {
-						addPurchaseOrder();
+						PurchaseOrder po = inputPurchaseOrder();
+						addPurchaseOrder(poList, po);
 					} else if (ssOption == 2) {
-						viewPurchaseOrder();
+						viewPurchaseOrder(poList);
 					} else if (ssOption == 3) {
-						editPurchaseOrder();
+						editPurchaseOrder(poList);
 					} else if (ssOption == 4) {
-						deletePurchaseOrder();
+						deletePurchaseOrder(poList);
 					} else {
 						System.out.println("Invalid option!");
 					}
@@ -198,23 +200,28 @@ public class C206_CaseStudyCodes {
 
 	// Codes for Purchase Order (Nitai)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	private static final ArrayList<String> ingrList = new ArrayList<String>();
-		public static void addPurchaseOrder() {
+	
+	public static  PurchaseOrder inputPurchaseOrder() {
 		Helper.line(50, "-");
-		System.out.println("View Purchase Order");
+		System.out.println("Add Purchase Order");
 		Helper.line(50, "-");
 		System.out.println();
-
+		
 		String name = Helper.readString("Enter Stall Name > ");
 		int ordNum = Helper.readInt("Enter Order Number > ");
 		String ordDate = Helper.readString("Enter Order Date (dd/mm/yyyy) > ");
 		String ingrDesc = Helper.readString("Enter ingredients Description > ");
 		int ingrAmt = Helper.readInt("Enter ingredients amount > ");
 		
+		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, name, ingrAmt);
+		return po;
+		
+	}
+		public static void addPurchaseOrder(ArrayList<PurchaseOrder> poList, PurchaseOrder po) {
+		
 
-		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, ingrAmt, name);
+		
 		poList.add(po);
-		po.countLesser();
 
 		System.out.println("Purchase Order Added!");
 		
@@ -223,7 +230,7 @@ public class C206_CaseStudyCodes {
 	}
 
 
-	public static void viewPurchaseOrder() {
+	public static void viewPurchaseOrder(ArrayList<PurchaseOrder> poList) {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
 		Helper.line(50, "-");
@@ -238,7 +245,7 @@ public class C206_CaseStudyCodes {
 	}
 
 
-	public static void editPurchaseOrder() {
+	public static void editPurchaseOrder(ArrayList<PurchaseOrder> poList) {
 		Helper.line(50, "-");
 		System.out.println("Edit Purchase Order");
 		Helper.line(50, "-");
@@ -262,7 +269,7 @@ public class C206_CaseStudyCodes {
 	}
 
 
-	public static void deletePurchaseOrder() {
+	public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
 		Helper.line(50, "-");
 		System.out.println("Delete Purchase Order");
 		Helper.line(50, "-");

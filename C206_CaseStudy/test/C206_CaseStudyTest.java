@@ -22,9 +22,18 @@ public C206_CaseStudyTest() {
 		
 		poList = new ArrayList<PurchaseOrder>();
 	}
+	
+	public void testAddPurchaseOrder() {
+		assertNotNull("Test if there is valid PurchaseOrder arraylist to add to", poList);
+		
+		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
+		
+	}
 
 	@After
 	public void tearDown() throws Exception {
+		
+		
 	}
 
 	@Test
