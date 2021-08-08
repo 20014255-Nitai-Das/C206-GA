@@ -3,11 +3,12 @@ public class Food {  // Done by Jolin
 	
 	private String name; 
 	private double price; 
-	private String stall;
+	private String stallName;
 	
-	public Food(String name, double price) {
+	public Food(String name, double price, String stallName) {
 		this.name = name;
 		this.price = price;
+		this.stallName = stallName;
 	}
 
 	public String getName() {
@@ -26,12 +27,12 @@ public class Food {  // Done by Jolin
 		this.price = price;
 	}
 
-	public String getStall() {
-		return stall;
+	public String getStallName() {
+		return stallName;
 	}
 
-	public void setStall(String stall) {
-		this.stall = stall;
+	public void setStallName(String stallName) {
+		this.stallName = stallName;
 	}
 	
 }

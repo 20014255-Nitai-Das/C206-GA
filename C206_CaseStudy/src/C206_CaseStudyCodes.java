@@ -309,8 +309,9 @@ public class C206_CaseStudyCodes {
 
 		String name = Helper.readString("Enter the name of the food > ");
 		double price = Helper.readDouble("Enter the price of the food > $");
+		String stallName = Helper.readString("Enter the name of the stall selling the food > ");
 
-		Food fd = new Food(name, price);
+		Food fd = new Food(name, price, stallName);
 		foodList.add(fd);
 
 		System.out.println("Food item was added succesfully!");
