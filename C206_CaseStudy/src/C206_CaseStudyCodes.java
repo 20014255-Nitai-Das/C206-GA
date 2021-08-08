@@ -18,9 +18,9 @@ public class C206_CaseStudyCodes {
 		stallList.add(s2);
 		stallList.add(s3);
 
-		Food f1 = new Food("Curry Puff", 1.50);
-		Food f2 = new Food("Fried Rice", 3.50);
-		Food f3 = new Food("Sushi", 2.00);
+		Food f1 = new Food("Curry Puff", 1.50, "s1");
+		Food f2 = new Food("Fried Rice", 3.50, "s2");
+		Food f3 = new Food("Sushi", 2.00, "s3");
 		foodList.add(f1);
 		foodList.add(f2);
 		foodList.add(f3);
