@@ -46,7 +46,7 @@ public class C206_CaseStudyCodes {
 
 						while (fimOption != 5) {
 
-							fimOption = Helper.readInt("Enter you option > ");
+							fimOption = Helper.readInt("Enter your option > ");
 							if (fimOption == 1) {
 								addFood();
 							} else if (fimOption == 2) {
