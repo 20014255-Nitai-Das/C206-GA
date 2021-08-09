@@ -1,11 +1,11 @@
 public class Stall {  // Done by Crystal
 	
 	private String name; 
-	private double sellingPrice; 
+	private String startDate; 
 	
-	public Stall(String name, double sellingPrice) {
+	public Stall(String name, String startDate) {
 		this.name = name;
-		this.sellingPrice = sellingPrice;
+		this.startDate = startDate;
 	}
 
 	public String getName() {
@@ -16,12 +16,12 @@ public class Stall {  // Done by Crystal
 		this.name = name;
 	}
 
-	public double getSellingPrice() {
-		return sellingPrice;
+	public String getStartDate() {
+		return startDate;
 	}
 
-	public void setPrice(double sellingPrice) {
-		this.sellingPrice = sellingPrice;
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
 	}
 }
 
