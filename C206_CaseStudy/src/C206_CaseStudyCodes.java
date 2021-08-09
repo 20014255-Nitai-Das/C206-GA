@@ -301,7 +301,7 @@ public class C206_CaseStudyCodes {
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	public static void addFood() {
+	public static void addFood(ArrayList<Food> foodList) {
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -317,7 +317,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("Food item was added succesfully!");
 	}
 
-	public static void viewFood() {
+	public static void viewFood(ArrayList<Food> foodList) {
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
@@ -329,31 +329,25 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 
-	public static void deleteFood() {
+	public static void deleteFood(ArrayList<Food> foodList) {
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
-		
-		boolean isDeleted = false;
-				
+						
 		for (Food fd : foodList) {
-			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
+			if (nameToDelete == fd.getName()) {
 				foodList.remove(fd);
-				isDeleted = true; 
+				System.out.println("Food Item: " + fd.getName() + " has been deleted");
+			} else {
+				System.out.println("Invalid Food Item!");
 			}
-		}
-		
-		if (isDeleted == true) {
-			System.out.println("Food item: " + nameToDelete + " has been deleted!");
-		} else {
-			System.out.println("Invalid Food Item!");
 		}
 	}
 	
-	public static void editFood() {
+	public static void editFood(ArrayList<Food> foodList) {
 		Helper.line(50, "-");
 		System.out.println("Edit Food Item");
 		Helper.line(50, "-");
