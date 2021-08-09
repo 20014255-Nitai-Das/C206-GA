@@ -18,6 +18,12 @@ public class C206_CaseStudyTest {
 	private PurchaseOrder po9;
 
 	private ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
+	
+	private Food fd1;
+	private Food fd2;
+	private Food fd3;
+	
+	private ArrayList<Food> foodList = new ArrayList<Food>();
 
 	public C206_CaseStudyTest() {
 		super();
@@ -36,6 +42,8 @@ public class C206_CaseStudyTest {
 		po9 = new PurchaseOrder(9, "Drinks", "07/08/2021", "Milo", 8);
 
 		poList = new ArrayList<PurchaseOrder>();
+		
+		fd1 = new Food("Curry Puff", 1.50, "s1");
 	}
 
 	public void testAddPurchaseOrder() {
