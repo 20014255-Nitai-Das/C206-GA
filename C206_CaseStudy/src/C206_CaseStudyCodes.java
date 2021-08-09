@@ -358,29 +358,27 @@ public class C206_CaseStudyCodes {
 	}
 
 	public static void deleteFood(ArrayList<Food> foodList) {
-
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
-
-		boolean isDeleted = false;
-
-		for (Food fd : foodList) {
-			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
-				foodList.remove(fd);
+		Boolean isDeleted = false;
+		
+		for (int i = 0; i < foodList.size();) {
+			if (nameToDelete.equalsIgnoreCase(foodList.get(i).getName())) {
+				System.out.println("Food item: " + nameToDelete + " has been deleted!");
+				foodList.remove(i);
 				isDeleted = true;
-			}
+				i++;
+			} 
+			i++;
 		}
 		
-		if (isDeleted == true) {
-			System.out.println("Food item: " + nameToDelete + " has been deleted!");
-		} else {
-			System.out.println("Invalid Food Item!");
+		if (isDeleted == false) {
+			System.out.println("Invalid Food Item");
 		}
-
 	}
 
 	public static void editFood(ArrayList<Food> foodList) {
