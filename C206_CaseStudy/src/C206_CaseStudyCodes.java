@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 public class C206_CaseStudyCodes {
 
-	public static  final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
-	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
-	
+	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
+	public static final ArrayList<Food> foodList = new ArrayList<Food>();
+	private static final ArrayList<PromotionOffers> PromotionList = new ArrayList<PromotionOffers>();
+
 	public static void main(String[] args) {
 
 		
@@ -26,7 +27,7 @@ public class C206_CaseStudyCodes {
 				
 				int caOption = 0;
 
-				while (caOption != 5) {
+				while (caOption != 4) {
 					CanAdmMenu();
 					caOption = Helper.readInt("Enter option > ");
 
@@ -38,7 +39,9 @@ public class C206_CaseStudyCodes {
 					} 
 					else if (caOption == 3) {
 						deleteFood();
-					} else {
+					}else if (option == 4) { 
+						System.out.println("Goodbye!");
+					}else {
 						System.out.println("Invalid option!");
 					}
 				}
@@ -71,7 +74,31 @@ public class C206_CaseStudyCodes {
 				}
 			} else if (option == 3) {
 				CustomerMenu();
+				
 			} else if (option == 4) {
+				int Option = 0;
+
+				while (Option != 5) {
+					PromotionOffers();
+					Option = Helper.readInt("Enter option > ");
+
+					if  (Option == 1) {
+						addPromotionOffers();
+					}
+					else if (Option == 2) {
+						viewPromotionOffers();
+					}
+					else if (Option == 3) {
+						editPromotionOffers();
+					}
+					else if (Option == 4) {
+						deletePurchaseOrder();
+					}else {
+						System.out.println("Invalid option!");
+					}
+				}
+				
+			} else if (option == 5) {
 				System.out.println("Goodbye!");
 			}else {
 				System.out.println("Invalid option!");
@@ -79,6 +106,7 @@ public class C206_CaseStudyCodes {
 		}
 	}
 
+	
 	public static void userMenu() {
 
 		Helper.line(50, "=");
@@ -91,7 +119,7 @@ public class C206_CaseStudyCodes {
 
 	}
 
-	public static void CanAdmMenu() { // FOOD 
+	public static void CanAdmMenu() { // FOOD
 		Helper.line(50, "-");
 		System.out.println("Canteen Administrator Menu");
 		Helper.line(50, "-");
@@ -112,6 +140,16 @@ public class C206_CaseStudyCodes {
 		System.out.println("4. Delete Purchase Order");
 	}
 
+	public static void PromotionOffers() {
+		Helper.line(50, "-");
+		System.out.println("Promotion offers");
+		Helper.line(50, "-");
+		System.out.println("1. Add Promotion offers");
+		System.out.println("2. View Promotion offers");
+		System.out.println("3. Change Promotion offers");
+		System.out.println("4. Delete Promotion offers");
+	}
+
 	public static void CustomerMenu() {
 		Helper.line(50, "-");
 		System.out.println("Customer Menu");
@@ -119,10 +157,10 @@ public class C206_CaseStudyCodes {
 
 	}
 
-	//Nitai
-	
-	//Codes for Purchase Order 
-	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	// Nitai
+
+	// Codes for Purchase Order
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	public static void addPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
@@ -140,7 +178,8 @@ public class C206_CaseStudyCodes {
 		System.out.println("Purchase Order Added!");
 
 	}
-	//Nitai
+
+	// Nitai
 	public static void viewPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
@@ -154,7 +193,8 @@ public class C206_CaseStudyCodes {
 		}
 		System.out.println(output);
 	}
-	//Nitai
+
+	// Nitai
 	public static void editPurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("Edit Purchase Order");
@@ -166,13 +206,10 @@ public class C206_CaseStudyCodes {
 		for (PurchaseOrder po : poList) {
 			if (userOrderNum == po.getOrderNumber()) {
 
-				
 				String newIngrDesc = Helper.readString("Enter New ingredients Description > ");
-				
 
-				
 				po.setIngrDesc(newIngrDesc);
-				
+
 				System.out.println("Changes made!");
 			} else {
 				System.out.println("Invalid Purchase Order Number!");
@@ -180,7 +217,8 @@ public class C206_CaseStudyCodes {
 		}
 
 	}
-	//Nitai
+
+	// Nitai
 	public static void deletePurchaseOrder() {
 		Helper.line(50, "-");
 		System.out.println("Delete Purchase Order");
@@ -191,15 +229,16 @@ public class C206_CaseStudyCodes {
 
 		for (PurchaseOrder po : poList) {
 			if (userOrderNum == po.getOrderNumber()) {
-			poList.remove(po);
-			System.out.println("Purchase Order: " + po.getOrderNumber() + " has been deleted");
-			}else {
+				poList.remove(po);
+				System.out.println("Purchase Order: " + po.getOrderNumber() + " has been deleted");
+			} else {
 				System.out.println("Invalid Purchase Order Number!");
 			}
 		}
 	}
-	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	public static void addFood() { // FOOD 
+
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public static void addFood() { // FOOD
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -208,12 +247,12 @@ public class C206_CaseStudyCodes {
 		String name = Helper.readString("Enter the name of the food > ");
 		double price = Helper.readDouble("Enter the price of the food > ");
 
-		Food fd = new Food(name, price); 
+		Food fd = new Food(name, price);
 		foodList.add(fd);
 
 		System.out.println("Food item was added succesfully!");
 	}
-	
+
 	public static void viewFood() { // FOOD
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
@@ -226,8 +265,8 @@ public class C206_CaseStudyCodes {
 		}
 		System.out.println(output);
 	}
-	
-	public static void deleteFood() { // FOOD 
+
+	public static void deleteFood() { // FOOD
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
@@ -239,8 +278,53 @@ public class C206_CaseStudyCodes {
 			if (nameToDelete == fd.getName()) {
 				foodList.remove(fd);
 				System.out.println("Food Item named " + fd.getName() + " has been deleted");
-			}else {
+			} else {
 				System.out.println("The name of the food item is invalid!");
+			}
+		}
+	}
+
+	public static void addPromotionOffers() { // PromotionOffers
+		Helper.line(50, "-");
+		System.out.println("Add Promotion Offers");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String promoDate = Helper.readString("Enter promotion date > ");
+		String promoName = Helper.readString("Enter promotion dish name> ");
+		String promoDish = Helper.readString("Enter promotion dish  >");
+		int promoDisc = Helper.readInt("Enter promotion discount > ");
+
+		PromotionOffers Promo = new PromotionOffers(promoDate, promoName, promoDish, promoDisc);
+		PromotionList.add(Promo);
+
+		System.out.println("PromotionOffers was added succesfully!");
+	}
+
+	public static void viewPromotionOffers() { // PromotionOffers
+		Helper.line(50, "-");
+		System.out.println("View PromotionOffers");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String output = String.format("%-10s %-20s\n", "Name of Food", "Price");
+		for (PromotionOffers Promo : PromotionList) {
+			output += String.format("%-10s %-20.2f\n", Promo.getPromoName(), Promo.getPromoDiscount());
+		}
+	}
+
+	public static void editPromoOffer() {
+		String editPromoOffer = Helper.readString("Enter Promotion to delete > ");
+		for (int i = 0; i < PromotionList.size(); i++) {
+			if (editPromoOffer.equalsIgnoreCase(PromotionList.get(i).getPromoName())) {
+				PromotionList.remove(i);
+				System.out.println("Promotional item deleted successfully");
+				break;
+
+			}
+
+			else {
+				System.out.println("Item Not Found");
 			}
 		}
 	}

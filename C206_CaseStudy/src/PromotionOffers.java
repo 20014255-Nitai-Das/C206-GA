@@ -2,16 +2,16 @@
 public class PromotionOffers {
 	
 	private String promoDate;
-	private int promoNum;
+	private String promoName;
 	private String promoDishs;
 	private int promoDiscount;
 	
 	
-	public PromotionOffers (String promoDate, int promoNum, String promoDishs, int promoDiscount) {
+	public PromotionOffers (String promoDate, String promoName, String promoDishs, int promoDiscount) {
 		
 		this.promoDate = promoDate;
 		this.promoDishs = promoDishs;
-		this.promoNum = promoNum;
+		this.promoName = promoName;
 		this.promoDiscount = promoDiscount;
 			
 	}
@@ -27,13 +27,13 @@ public class PromotionOffers {
 	}
 
 
-	public int getPromoNum() {
-		return promoNum;
+	public String getPromoName() {
+		return promoName;
 	}
 
 
-	public void setPromoNum(int promoNum) {
-		this.promoNum = promoNum;
+	public void setPromoNum(String promoName) {
+		this.promoName = promoName;
 	}
 
 
@@ -55,6 +55,15 @@ public class PromotionOffers {
 	public void setPromoDiscount(int promoDiscount) {
 		this.promoDiscount = promoDiscount;
 	}
+
+
+	public static void add(PromotionOffers Promo) {
+		
+		
+	}
+
+
+
 	
 	
 
