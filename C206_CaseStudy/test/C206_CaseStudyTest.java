@@ -64,6 +64,7 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that ViewAllPurchaseOrder",testOutput,allPurchaseOrder);
 	}
 
+	public voide
 	public void testEditPurchaseOrder() {
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to edit the purchase orders", poList);
 
