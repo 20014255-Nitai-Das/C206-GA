@@ -283,12 +283,7 @@ public class C206_CaseStudyCodes {
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	
-
-	public static void addFood() {
-
-
-
+	public static void addFood(ArrayList<Food> foodList) {
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -305,12 +300,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("Food item was added succesfully!");
 	}
 
-
-	
-
-	public static void viewFood() { // FOOD
-
-
+	public static void viewFood(ArrayList<Food> foodList) { 
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
@@ -323,7 +313,7 @@ public class C206_CaseStudyCodes {
 	}
 
 
-	public static void deleteFood() { // FOOD
+	public static void deleteFood(ArrayList<Food> foodList) { 
 
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
@@ -358,7 +348,7 @@ public class C206_CaseStudyCodes {
 	}
 
 
-	public static void editFood() {
+	public static void editFood(ArrayList<Food> foodList) {
 
 		Helper.line(50, "-");
 		System.out.println("Edit Food Item");
