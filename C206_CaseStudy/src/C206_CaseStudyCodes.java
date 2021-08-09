@@ -10,15 +10,6 @@ public class C206_CaseStudyCodes {
 
 
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
-	
-
-
-
-
-	
-	
-
-
 
 	public static void main(String[] args) {
 
@@ -44,7 +35,7 @@ public class C206_CaseStudyCodes {
 	while(option != 4) {
 		
 	userMenu();
-		option += Helper.readInt("Enter ");
+		option += Helper.readInt("Enter choice >");
 		
 		if (option == 1) {
 			int caOption = 0;
@@ -58,16 +49,20 @@ public class C206_CaseStudyCodes {
 			}
 		}else if(option ==2) {
 			int ssOption = 0;
-			StallStaffMenu() ;
+			
 			while(ssOption != 5) {
+				StallStaffMenu() ;
+				ssOption += Helper.readInt("Enter choice > ");
 				if(ssOption == 1) {
-					
+					 PurchaseOrder po = inputPurchaseOrder();
+					 addPurchaseOrder(poList, po);
 				}else if(ssOption ==2) {
+					C206_CaseStudyCodes.viewPurchaseOrder(poList);
 					
 				}else if(ssOption ==3) {
-					
+					C206_CaseStudyCodes.editPurchaseOrder(poList);
 				}else if(ssOption ==4) {
-					
+					C206_CaseStudyCodes.deletePurchaseOrder(poList);
 				}
 			}
 			
@@ -170,18 +165,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("Customer Menu");
 		Helper.line(50, "-");
 
-	}
-
-	// Nitai
-
-	// Codes for Purchase Order
-	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	public static void addPurchaseOrder() {
-	}
-
-
-	public static void Stall() {
+	}public static void Stall() {
 
 		Helper.line(50, "-");
 		System.out.println("Stall");
@@ -498,6 +482,7 @@ public class C206_CaseStudyCodes {
 		for (PromotionOffers Promo : PromotionList) {
 			output += String.format("%-10s %-20.2f\n", Promo.getPromoName(), Promo.getPromoDiscount());
 		}
+		System.out.println(output);
 	}
 
 	public static void editPromotionOffers() {
