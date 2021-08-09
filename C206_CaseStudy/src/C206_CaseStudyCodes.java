@@ -227,7 +227,7 @@ public class C206_CaseStudyCodes {
 		String ingrDesc = Helper.readString("Enter ingredients Description > ");
 		int ingrAmt = Helper.readInt("Enter ingredients amount > ");
 
-		PurchaseOrder po = new PurchaseOrder(ordNum, ordDate, ingrDesc, name, ingrAmt);
+		PurchaseOrder po = new PurchaseOrder(ordNum,name, ordDate, ingrDesc, ingrAmt);
 		return po;
 
 	}
@@ -242,11 +242,11 @@ public class C206_CaseStudyCodes {
 
 	// Nitai
 
-	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList2) {
+	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList) {
 		String output = "";
 
 		for (PurchaseOrder po : poList) {
-			output += String.format("%-20s %-20d %-20s %-20s %-20d \n", po.getStallName(), po.getOrderNumber(),
+			output += String.format("%-20d %-20s %-20s %-20s %-20d \n",  po.getOrderNumber(),po.getStallName(),
 					po.getOrderDate(), po.getIngrDesc(), po.getIngrAmt());
 		}
 		return output;
@@ -259,7 +259,7 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println();
 
-		String output = String.format("%-20s %-20s %-20s %-20s %-20s \n", "Stall Name", "Order No", "Order Date",
+		String output = String.format("%-20s %-20s %-20s %-20s %-20s \n","Order No", "Stall Name", "Order Date",
 				"Description", "Amount");
 
 		output += retrieveAllPurchaseOrder(poList);
