@@ -18,7 +18,14 @@ public class C206_CaseStudyTest {
 	private PurchaseOrder po9;
 
 	private ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
-
+	
+	// Food 
+	private Food fd1;
+	private Food fd2;
+	private Food fd3;
+	
+	private ArrayList<Food> foodList = new ArrayList<Food>();
+    
 	public C206_CaseStudyTest() {
 		super();
 	}
@@ -36,6 +43,14 @@ public class C206_CaseStudyTest {
 		po9 = new PurchaseOrder(9, "Drinks", "07/08/2021", "Milo", 8);
 
 		poList = new ArrayList<PurchaseOrder>();
+		
+		// Food 
+		
+		fd1 = new Food("Curry Puff", 3.00, "s1");
+		fd1 = new Food("Fried Rice", 4.00, "s2");
+		fd1 = new Food("Sushi", 3.50, "s3");
+		
+		foodList = new ArrayList<Food>();
 	}
 
 	public void testAddPurchaseOrder() {
@@ -64,9 +79,11 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that ViewAllPurchaseOrder",testOutput,allPurchaseOrder);
 	}
 
+
 	public void testViewPurchaseOrder() {
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to view the purchase orders", poList);
 	}
+
 	public void testEditPurchaseOrder() {
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to edit the purchase orders", poList);
 
@@ -77,6 +94,24 @@ public class C206_CaseStudyTest {
 
 	}
 
+	// Food 
+	public void testAddFood() {
+		assertNotNull("Test that foodList is not null before a new item can be added to it", foodList);
+	}
+	
+	public void testViewFood() {
+		assertNotNull("Test that foodList is not null before the food items in the menu can be viewed", foodList);
+	}
+	
+	public void testDeleteFood() {
+		assertNotNull("Test that foodList is not null before an item can be deleted", foodList);
+	}
+	
+	public void testEditFood() {
+		assertNotNull("Test that foodList is not null before the food items in the menu can be edited", foodList);
+	}
+	
+	
 	@After
 	public void tearDown() throws Exception {
 		po1 = null;
