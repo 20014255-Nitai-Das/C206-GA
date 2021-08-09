@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class C206_CaseStudyCodes {
 
 	private static final ArrayList<PromotionOffers> PromotionList = new ArrayList<PromotionOffers>();
+	
 	public static final ArrayList<Stall> stallList = new ArrayList<Stall>();
 
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
@@ -421,7 +422,7 @@ public class C206_CaseStudyCodes {
 
 	public static void viewStall() { // View Stall
 		Helper.line(50, "-");
-		System.out.println("View Existing Stall");
+		System.out.println("View Existing Stall"); 
 		Helper.line(50, "-");
 
 		System.out.printf("%-10s %-40s \n", "NAME", "START DATE");
@@ -437,20 +438,22 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println();
 		
-		String deleteStall = Helper.readString("Enter Stall Name to Delete > ");
+		String deleteStall = Helper.readString("Enter Stall Name to Delete > ");		
+		boolean isDeleted = false;
 
-		for (Stall stall : stallList) {
-			if (deleteStall == stall.getName()) {
-				stallList.remove(stall);
-				System.out.println("Stall Name: " + stall.getName() + " has been deleted");
+		for (int i = 0; i < stallList.size(); ) {			
+			if (deleteStall.equalsIgnoreCase(stallList.get(i).getName())) {
+				System.out.println("Stall Name: " + stallList.get(i).getName() + " has been deleted");
+				stallList.remove(i);
+				isDeleted = true;
+				i++;
 			} 
-			else {
-				System.out.println("Invalid Stall Name!");
-			}
+			i++;
+		}
+		if (isDeleted == false) {
+			System.out.println("Invalid Stall Name");
 		}
 	}
-
-
 
 	public static void updateStall() { // Update Stall
 		Helper.line(50, "-");
@@ -459,18 +462,20 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 		
 		String updateName = Helper.readString("Enter Current Stall Name > "); 
-			for (Stall stall : stallList) {
-				if (updateName == stall.getName()) {
+		boolean isDeleted = false;
+		
+			for (int i = 0; i < stallList.size(); i++ ) {			
+				if (updateName.equalsIgnoreCase(stallList.get(i).getName())) {					
 					String newName = Helper.readString("Enter New Stall Name > ");
-					stall.setName(newName);
+					stallList.get(i).setName(newName);
 					System.out.println("Name successfully updated!");
-				} 
-				
-				else {
-					System.out.println("Invalid Stall Name !");
+					isDeleted = true;
 				}
 			}
+			if (isDeleted == false) {
+				System.out.println("Invalid Stall Name");
 		}
+	}
 	
 // codes for promotion offers (WangBo)
 	public static void addPromotionOffers() { // PromotionOffers
