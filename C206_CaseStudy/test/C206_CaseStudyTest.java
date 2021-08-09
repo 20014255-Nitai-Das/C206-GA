@@ -145,7 +145,7 @@ public class C206_CaseStudyTest {
 	     assertSame("Test that Category is added", s3, stallList.get(1));
 	}
 	 
-	 public void testRetrieveAllStall() {
+	 public void testViewStall() {
 		 assertNotNull("Test if there is valid Stall arraylist to add to ", stallList);
 
 
@@ -159,7 +159,7 @@ public class C206_CaseStudyTest {
 	     assertEquals("Test that Stall arraylist size is 2", 2, stallList.size());
 
 
-	     allStall = C206_CaseStudyTest.retrieveAllStall(stallList);
+	     allStall = C206_CaseStudyTest.viewStall(stallList);
 	     testOutput = String.format("%-20s %-20s\n", "Stall 1", "05/06/2021");
 	     testOutput += String.format("%-20s %-20s\n", "Stall 2", "03/04/2021");
 	     testOutput += String.format("%-20s %-20s\n", "Stall 3", "01/02/2021");
