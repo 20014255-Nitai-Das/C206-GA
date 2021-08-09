@@ -3,9 +3,17 @@ import java.util.ArrayList;
 public class C206_CaseStudyCodes {
 
 
+	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
+	public static final ArrayList<Food> foodList = new ArrayList<Food>();
+	private static final ArrayList<PromotionOffers> PromotionList = new ArrayList<PromotionOffers>();
+
+	public static void main(String[] args) {
+
+
 	
 	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
 	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
+
 
 
 	public static void main(String[] args) {
@@ -35,11 +43,27 @@ public class C206_CaseStudyCodes {
 
 				int caOption = 0;
 
+
+				while (caOption != 4) {
+
 				while (caOption != 3) {
+
 					CanAdmMenu();
 					caOption = Helper.readInt("Enter option > ");
 
 					if (caOption == 1) {
+
+						addFood();
+					} 
+					else if (caOption == 2) {
+						viewFood();
+					} 
+					else if (caOption == 3) {
+						deleteFood();
+					}else if (option == 4) { 
+						System.out.println("Goodbye!");
+					}else {
+=======
 						FoodItemMenu();
 
 						int fimOption = 0;
@@ -85,6 +109,7 @@ public class C206_CaseStudyCodes {
 							
 						}
 					} else {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 						System.out.println("Invalid option!");
 					}
 				}
@@ -116,7 +141,31 @@ public class C206_CaseStudyCodes {
 				}
 			} else if (option == 3) {
 				CustomerMenu();
+				
 			} else if (option == 4) {
+				int Option = 0;
+
+				while (Option != 5) {
+					PromotionOffers();
+					Option = Helper.readInt("Enter option > ");
+
+					if  (Option == 1) {
+						addPromotionOffers();
+					}
+					else if (Option == 2) {
+						viewPromotionOffers();
+					}
+					else if (Option == 3) {
+						editPromotionOffers();
+					}
+					else if (Option == 4) {
+						deletePurchaseOrder();
+					}else {
+						System.out.println("Invalid option!");
+					}
+				}
+				
+			} else if (option == 5) {
 				System.out.println("Goodbye!");
 			} else {
 				System.out.println("Invalid option!");
@@ -124,6 +173,7 @@ public class C206_CaseStudyCodes {
 	}
 }
 
+	
 	public static void userMenu() {
 
 		Helper.line(50, "=");
@@ -136,7 +186,11 @@ public class C206_CaseStudyCodes {
 
 	}
 
+<<<<<<< HEAD
+	public static void CanAdmMenu() { // FOOD
+=======
 	public static void CanAdmMenu() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Canteen Administrator Menu");
 		Helper.line(50, "-");
@@ -180,14 +234,33 @@ public class C206_CaseStudyCodes {
 		System.out.println("4. Delete Purchase Order");
 	}
 
+	public static void PromotionOffers() {
+		Helper.line(50, "-");
+		System.out.println("Promotion offers");
+		Helper.line(50, "-");
+		System.out.println("1. Add Promotion offers");
+		System.out.println("2. View Promotion offers");
+		System.out.println("3. Change Promotion offers");
+		System.out.println("4. Delete Promotion offers");
+	}
+
 	public static void CustomerMenu() {
 		Helper.line(50, "-");
 		System.out.println("Customer Menu");
 		Helper.line(50, "-");
 
 	}
+<<<<<<< HEAD
+
+	// Nitai
+
+	// Codes for Purchase Order
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public static void addPurchaseOrder() {
+=======
 	
 	public static void Stall() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Stall");
 		Helper.line(50, "-");
@@ -230,6 +303,11 @@ public class C206_CaseStudyCodes {
 		
 
 	}
+<<<<<<< HEAD
+
+	// Nitai
+	public static void viewPurchaseOrder() {
+=======
 	public static  String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList) {
 		String output ="";
 		
@@ -242,6 +320,7 @@ public class C206_CaseStudyCodes {
 
 
 	public static void viewPurchaseOrder(ArrayList<PurchaseOrder> poList) {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("View Purchase Order");
 		Helper.line(50, "-");
@@ -254,8 +333,13 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 
+<<<<<<< HEAD
+	// Nitai
+	public static void editPurchaseOrder() {
+=======
 
 	public static void editPurchaseOrder(ArrayList<PurchaseOrder> poList) {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Edit Purchase Order");
 		Helper.line(50, "-");
@@ -278,8 +362,13 @@ public class C206_CaseStudyCodes {
 
 	}
 
+<<<<<<< HEAD
+	// Nitai
+	public static void deletePurchaseOrder() {
+=======
 
 	public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Delete Purchase Order");
 		Helper.line(50, "-");
@@ -297,11 +386,20 @@ public class C206_CaseStudyCodes {
 		}
 	}
 
+<<<<<<< HEAD
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	public static void addFood() { // FOOD
+=======
 	
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 	public static void addFood(ArrayList<Food> foodList) {
+=======
+	public static void addFood() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -311,13 +409,25 @@ public class C206_CaseStudyCodes {
 		double price = Helper.readDouble("Enter the price of the food > $");
 		String stallName = Helper.readString("Enter the name of the stall selling the food > ");
 
+<<<<<<< HEAD
+		Food fd = new Food(name, price);
+=======
 		Food fd = new Food(name, price, stallName);
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		foodList.add(fd);
 
 		System.out.println("Food item was added succesfully!");
 	}
 
+<<<<<<< HEAD
 	public static void viewFood(ArrayList<Food> foodList) {
+=======
+<<<<<<< HEAD
+	public static void viewFood() { // FOOD
+=======
+	public static void viewFood() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
@@ -329,7 +439,15 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 
+<<<<<<< HEAD
 	public static void deleteFood(ArrayList<Food> foodList) {
+=======
+<<<<<<< HEAD
+	public static void deleteFood() { // FOOD
+=======
+	public static void deleteFood() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
@@ -356,6 +474,13 @@ public class C206_CaseStudyCodes {
 		String nameToEdit = Helper.readString("Enter the name of the food item you would like to edit > ");
 
 		for (Food fd : foodList) {
+<<<<<<< HEAD
+			if (nameToDelete == fd.getName()) {
+				foodList.remove(fd);
+				System.out.println("Food Item named " + fd.getName() + " has been deleted");
+			} else {
+				System.out.println("The name of the food item is invalid!");
+=======
 			if (nameToEdit == fd.getName()) {
 
 				double newSellingPrice = Helper.readDouble("Enter the new selling price > $");
@@ -415,6 +540,7 @@ public class C206_CaseStudyCodes {
 			}			
 			else {
 				System.out.println("Invalid Stall Name !");
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 			}
 		}
 	}
@@ -425,6 +551,54 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println();
 
+<<<<<<< HEAD
+	public static void addPromotionOffers() { // PromotionOffers
+		Helper.line(50, "-");
+		System.out.println("Add Promotion Offers");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String promoDate = Helper.readString("Enter promotion date > ");
+		String promoName = Helper.readString("Enter promotion dish name> ");
+		String promoDish = Helper.readString("Enter promotion dish  >");
+		int promoDisc = Helper.readInt("Enter promotion discount > ");
+
+		PromotionOffers Promo = new PromotionOffers(promoDate, promoName, promoDish, promoDisc);
+		PromotionList.add(Promo);
+
+		System.out.println("PromotionOffers was added succesfully!");
+	}
+
+	public static void viewPromotionOffers() { // PromotionOffers
+		Helper.line(50, "-");
+		System.out.println("View PromotionOffers");
+		Helper.line(50, "-");
+		System.out.println();
+
+		String output = String.format("%-10s %-20s\n", "Name of Food", "Price");
+		for (PromotionOffers Promo : PromotionList) {
+			output += String.format("%-10s %-20.2f\n", Promo.getPromoName(), Promo.getPromoDiscount());
+		}
+	}
+
+	public static void editPromoOffer() {
+		String editPromoOffer = Helper.readString("Enter Promotion to delete > ");
+		for (int i = 0; i < PromotionList.size(); i++) {
+			if (editPromoOffer.equalsIgnoreCase(PromotionList.get(i).getPromoName())) {
+				PromotionList.remove(i);
+				System.out.println("Promotional item deleted successfully");
+				break;
+
+			}
+
+			else {
+				System.out.println("Item Not Found");
+			}
+		}
+	}
+
+}
+=======
 		String updateName = Helper.readString("Enter Current Stall Name > ");
 
 		for (Stall stall : stallList) {
@@ -443,3 +617,4 @@ public class C206_CaseStudyCodes {
 	}
 }
 
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
