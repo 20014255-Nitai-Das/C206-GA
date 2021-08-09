@@ -336,15 +336,20 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
-
+		
+		boolean isDeleted = false;
+				
 		for (Food fd : foodList) {
 			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
 				foodList.remove(fd);
-				System.out.println("Food Item named " + fd.getName() + " has been deleted!");
-			} else {
-				System.out.println("The name of the food item is invalid!");
+				isDeleted = true; 
 			}
-			break;
+		}
+		
+		if (isDeleted == true) {
+			System.out.println("Food item: " + nameToDelete + " has been deleted!");
+		} else {
+			System.out.println("Invalid Food Item!");
 		}
 	}
 	
