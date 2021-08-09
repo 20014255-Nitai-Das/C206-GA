@@ -60,13 +60,13 @@ public class C206_CaseStudyCodes {
 						while (sOption != 4) {
 							StallMenu();
 							if (sOption == 1) {
-
+								addStall();
 							} else if (sOption == 2) {
-
+								viewStall();   
 							} else if (sOption == 3) {
-
+								deleteStall();
 							} else if (sOption == 4) {
-
+								updateStall();
 							}
 						}
 					}
@@ -450,9 +450,22 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println("Update Stall Name");
 		Helper.line(50, "-");
-
 		System.out.println();
-	}
+		
+		String updateName = Helper.readString("Enter Current Stall Name > "); 
+			for (Stall stall : stallList) {
+				if (updateName == stall.getName()) {
+					String newName = Helper.readString("Enter New Stall Name > ");
+					stall.setName(newName);
+					System.out.println("Name successfully updated!");
+				} 
+				
+				else {
+					System.out.println("Invalid Stall Name !");
+				}
+			}
+		}
+	
 
 	public static void addPromotionOffers() { // PromotionOffers
 		Helper.line(50, "-");
@@ -499,22 +512,4 @@ public class C206_CaseStudyCodes {
 			}
 		}
 	}
-
-	String updateName = Helper.readString("Enter Current Stall Name > ");
-	{
-
-		for (Stall stall : stallList) {
-			if (updateName == stall.getName()) {
-
-				String newName = Helper.readString("Enter New Stall Name > ");
-
-				stall.setName(newName);
-
-				System.out.println("Name successfully updated!");
-			} else {
-				System.out.println("Invalid Stall Name !");
-			}
-		}
-	}
-
 }
