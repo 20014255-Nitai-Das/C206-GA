@@ -32,12 +32,12 @@ public class C206_CaseStudyCodes {
 		while (option != 4) {
 
 			userMenu();
-			option += Helper.readInt("Enter choice >");
+			option = Helper.readInt("Enter choice >");
 
 			if (option == 1) {
-				int caOption = 0;
+				int caOption = -1;
 
-				while (caOption != 3) {
+				while (caOption != 4) {
 					CanAdmMenu();
 					caOption = Helper.readInt("Enter choice >");
 					if (caOption == 1) {
@@ -78,6 +78,8 @@ public class C206_CaseStudyCodes {
 								updateStall();
 							}
 						}
+					}else if(caOption == 3) {
+						
 					}
 				}
 			} else if (option == 2) {
@@ -144,7 +146,8 @@ public class C206_CaseStudyCodes {
 
 		System.out.println("1. Food Items");
 		System.out.println("2. Stalls ");
-		System.out.println("3. Back");
+		System.out.println("3. View Promotion");
+		System.out.println("4. Back");
 
 	}
 
@@ -158,6 +161,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("2. View Food Item");
 		System.out.println("3. Delete Food Item");
 		System.out.println("4. Edit Food Item");
+		System.out.println("5. Back");
 	}
 
 	public static void StallMenu() {
@@ -169,6 +173,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("1. Add Stall");
 		System.out.println("2. View Stall");
 		System.out.println("3. Delete Stall");
+		System.out.println("5. Back");
 	}
 
 	public static void StallStaffMenu() {
@@ -179,6 +184,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("2. View Purchase Order");
 		System.out.println("3. Change Purchase Order");
 		System.out.println("4. Delete Purchase Order");
+		System.out.println("5. Back");
 	}
 
 	public static void PromotionOffers() {
@@ -189,6 +195,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("2. View Promotion offers");
 		System.out.println("3. Change Promotion offers");
 		System.out.println("4. Delete Promotion offers");
+		System.out.println("5. Back");
 	}
 
 	public static void CustomerMenu() {
