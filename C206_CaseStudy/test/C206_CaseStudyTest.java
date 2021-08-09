@@ -48,12 +48,15 @@ public class C206_CaseStudyTest {
 
 	@Test
 	public void testAddPurchaseOrder() {
+		//Test if PurchaseOrderList is not null but empty
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to add to", poList);
 
+		//Given an empty list, after adding 1 item1, test if the size of the list is 1
 		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
 		assertEquals("Test that PurchaseOrder arraylist size is 1", 1, poList.size());
 		assertSame("test that PurchaseOrder is added", po1, poList.get(0));
 
+		//Given an empty list, after adding 2 items, test if the size of the list is 2
 		C206_CaseStudyCodes.addPurchaseOrder(poList, po2);
 		assertEquals("Test that PurchaseOrder arraylist size is 2", 2, poList.size());
 		assertSame("test that PurchaseOrder is added", po2, poList.get(1));
@@ -62,22 +65,36 @@ public class C206_CaseStudyTest {
 
 	@Test
 	public void testRetrieveAllPurchaseOrder() {
+	    //Test if PurchaseOrderList is not null but empty
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to retrieve purchase ordersfrom", poList);
 
+		 //Test if the list of Purchase order retrieved from the Purchase List is empty
 		String allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
 		String testOutput = "";
 		assertEquals("Test that the retrieved PurchaseOrderlist is empty?", testOutput, allPurchaseOrder);
 
+		 //Test if the expected output string same as the list of Purchase Order retrieved from PurchaseList
 		allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
 		testOutput = String.format("%-10d %-10 s %-10s %-10s %-10d\n", 1, "Sushi", "07/08/2021", "Rice", 2);
-		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicke ", 5);
+		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicken ", 5);
 		assertEquals("Test that ViewAllPurchaseOrder", testOutput, allPurchaseOrder);
 	}
 
 	@Test
 	public void testViewPurchaseOrder() {
+		//Test if PurchaseOrderList is not null but empty
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to view the purchase orders", poList);
+		
+		 //Test if the list of Purchase orders retrieved from the PurchaseOrderList is empty
+	    String allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
+	    String testOutput = "";
+	    assertEquals("Check that ViewAllPurchaseOrder", testOutput, allPurchaseOrder);
 
+	    //Test if the expected output string same as the list of Purchase Order retrieved from PurchaseOrderList
+		allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
+		testOutput = String.format("%-10d %-10 s %-10s %-10s %-10d\n", 1, "Sushi", "07/08/2021", "Rice", 2);
+		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicken ", 5);
+		assertEquals("Test that ViewAllPurchaseOrder", testOutput, allPurchaseOrder);
 	}
 
 	@Test
@@ -88,10 +105,12 @@ public class C206_CaseStudyTest {
 
 	@Test
 	public void testDeletePurchaseOrder() {
+		//Test if PurchaseOrderList is not null but empty
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to delete purchase orders", poList);
 
 		assertEquals("Test that PurchaseOrder arrayList size is 0", 0, poList.size());
 
+		//Test that when a purchase orders is removed, then the array list's size decreases 
 		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
 		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
 		poList.remove(po1);
