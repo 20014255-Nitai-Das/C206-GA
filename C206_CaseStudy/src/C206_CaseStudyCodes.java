@@ -18,9 +18,9 @@ public class C206_CaseStudyCodes {
 		stallList.add(s2);
 		stallList.add(s3);
 
-		Food f1 = new Food("Curry Puff", 1.50);
-		Food f2 = new Food("Fried Rice", 3.50);
-		Food f3 = new Food("Sushi", 2.00);
+		Food f1 = new Food("Curry Puff", 1.50, "s1");
+		Food f2 = new Food("Fried Rice", 3.50, "s2");
+		Food f3 = new Food("Sushi", 2.00, "s3");
 		foodList.add(f1);
 		foodList.add(f2);
 		foodList.add(f3);
@@ -46,7 +46,7 @@ public class C206_CaseStudyCodes {
 
 						while (fimOption != 5) {
 
-							fimOption = Helper.readInt("Enter you option > ");
+							fimOption = Helper.readInt("Enter your option > ");
 							if (fimOption == 1) {
 								addFood();
 							} else if (fimOption == 2) {
@@ -309,8 +309,9 @@ public class C206_CaseStudyCodes {
 
 		String name = Helper.readString("Enter the name of the food > ");
 		double price = Helper.readDouble("Enter the price of the food > $");
+		String stallName = Helper.readString("Enter the name of the stall selling the food > ");
 
-		Food fd = new Food(name, price);
+		Food fd = new Food(name, price, stallName);
 		foodList.add(fd);
 
 		System.out.println("Food item was added succesfully!");
@@ -321,9 +322,9 @@ public class C206_CaseStudyCodes {
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
 
-		String output = String.format("%-15s %-20s\n", "Name of Food", "Price");
+		String output = String.format("%-15s %-8s %-16s\n", "Name of Food", "Price", "Name of Stall");
 		for (Food fd : foodList) {
-			output += String.format("%-15s $%-20.2f\n", fd.getName(), fd.getPrice());
+			output += String.format("%-15s $%-8.2f %-14s\n", fd.getName(), fd.getPrice(), fd.getStallName());
 		}
 		System.out.println(output);
 	}
@@ -335,14 +336,20 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
-
+		
+		boolean isDeleted = false;
+				
 		for (Food fd : foodList) {
-			if (nameToDelete == fd.getName()) {
+			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
 				foodList.remove(fd);
-				System.out.println("Food Item named " + fd.getName() + " has been deleted");
-			} else {
-				System.out.println("The name of the food item is invalid!");
+				isDeleted = true; 
 			}
+		}
+		
+		if (isDeleted == true) {
+			System.out.println("Food item: " + nameToDelete + " has been deleted!");
+		} else {
+			System.out.println("Invalid Food Item!");
 		}
 	}
 	
