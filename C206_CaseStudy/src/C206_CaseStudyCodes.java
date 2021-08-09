@@ -48,13 +48,48 @@ public class C206_CaseStudyCodes {
 		
 		if (option == 1) {
 			int caOption = 0;
-			
-			while (caOption != 4) {
-				
+			CanAdmMenu();
+			while (caOption != 3) {
+				if(caOption ==1 ) {
+					
+				}else if(caOption ==2) {
+					
+				}
 			}
 		}else if(option ==2) {
+			int ssOption = 0;
+			StallStaffMenu() ;
+			while(ssOption != 5) {
+				if(ssOption == 1) {
+					
+				}else if(ssOption ==2) {
+					
+				}else if(ssOption ==3) {
+					
+				}else if(ssOption ==4) {
+					
+				}
+			}
 			
+			
+		
 		}else if(option ==3 ) {
+			CustomerMenu();
+			int cOption = 0;
+			while(cOption == 4) {
+				
+			if(cOption == 1) {
+				
+			}else if(cOption ==2) {
+				
+			}else if(cOption ==3) {
+				
+			}else if(cOption ==4) {
+			
+			}
+		}
+	
+			
 			
 		}else if(option == 4) {
 			System.out.println("Good bye!");
