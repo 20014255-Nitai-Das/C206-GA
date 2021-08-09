@@ -18,6 +18,8 @@ public class C206_CaseStudyCodes {
 		stallList.add(s2);
 		stallList.add(s3);
 
+		ArrayList<Food> foodList = new ArrayList<Food>();
+		
 		Food f1 = new Food("Curry Puff", 1.50, "s1");
 		Food f2 = new Food("Fried Rice", 3.50, "s2");
 		Food f3 = new Food("Sushi", 2.00, "s3");
@@ -45,12 +47,16 @@ public class C206_CaseStudyCodes {
 							fiOption += Helper.readInt("Enter choice >");
 
 							if (fiOption == 1) {
+								addFood(foodList);
 
 							} else if (fiOption == 2) {
+								viewFood(foodList);
 
 							} else if (fiOption == 3) {
+								deleteFood(foodList);
 
 							} else if (fiOption == 4) {
+								editFood(foodList);
 
 							}
 						}
