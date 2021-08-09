@@ -8,9 +8,14 @@ public class C206_CaseStudyCodes {
 
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
 
+	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 	public static void main(String[] args) {
 
-		ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
+		PurchaseOrder po1 = new PurchaseOrder(1, "Sushi", "07/08/2021", "Rice", 2);
+		poList.add(po1);
+		
+		
+		
 
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
 		Stall s2 = new Stall("Fried Rice", "03/04/2021");
@@ -237,7 +242,7 @@ public class C206_CaseStudyCodes {
 
 	// Nitai
 
-	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList) {
+	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList2) {
 		String output = "";
 
 		for (PurchaseOrder po : poList) {
@@ -272,42 +277,54 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		int userOrderNum = Helper.readInt("Enter Purchase Order Number > ");
-
-		for (PurchaseOrder po : poList) {
-			if (userOrderNum == po.getOrderNumber()) {
+		boolean isEdit = false;
+		for (int i = 0; i < poList.size(); i++) {
+			if (userOrderNum == poList.get(i).getOrderNumber()) {
 
 				String newIngrDesc = Helper.readString("Enter New ingredients Description > ");
 
-				po.setIngrDesc(newIngrDesc);
+				poList.get(i).setIngrDesc(newIngrDesc);
 
-				System.out.println("Changes made!");
+				isEdit = true;
+				
 			} else {
-				System.out.println("Invalid Purchase Order Number!");
+				isEdit = false;
+				
 			}
+		}if(isEdit == true) {
+			System.out.println("Changes made!");
+		}else if(isEdit == false) {
+			System.out.println("Changes have not been made!");
 		}
 
 	}
 
 	// Nitai
 
-	public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
-
-		Helper.line(50, "-");
-		System.out.println("Delete Purchase Order");
-		Helper.line(50, "-");
-		System.out.println();
-
-		int userOrderNum = Helper.readInt("Enter Purchase Order Number > ");
-
-		for (PurchaseOrder po : poList) {
-			if (userOrderNum == po.getOrderNumber()) {
-				poList.remove(po);
-				System.out.println("Purchase Order: " + po.getOrderNumber() + " has been deleted");
-			} else {
-				System.out.println("Invalid Purchase Order Number!");
-			}
-		}
-	}
+	  public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
+		    Helper.line(50, "-");
+		      System.out.print("Delete Purchase Order\n");
+		      Helper.line(50, "-");
+		      
+		      
+		   
+		      int  poNum = Helper.readInt("Enter purchase order number > ");
+		      boolean isDeleted = false;
+		       
+		          for (int i = 0; i < poList.size(); i++) {
+		            if (poList.get(i).getOrderNumber() == poNum) {
+		              poList.remove(i);
+		              isDeleted = true;
+		        }else {
+		      isDeleted = false;
+		        }
+		            
+		      }if (isDeleted == true) {
+		        System.out.println("Purchase has been deleted successfully");
+		      }else if (isDeleted == false) {
+		        System.out.println("Purchase has not been deleted successfully");
+		      }
+		    }
 
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -341,66 +358,46 @@ public class C206_CaseStudyCodes {
 	}
 
 	public static void deleteFood(ArrayList<Food> foodList) {
-
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
-
-		boolean isDeleted = false;
-
-		for (Food fd : foodList) {
-			if (nameToDelete == fd.getName()) {
-				foodList.remove(fd);
-
-				System.out.println("Food Item: " + fd.getName() + " has been deleted");
-			} else {
-				System.out.println("Invalid Food Item!");
-
-			}
+		Boolean isDeleted = false;
+		
+		for (int i = 0; i < foodList.size();) {
+			if (nameToDelete.equalsIgnoreCase(foodList.get(i).getName())) {
+				System.out.println("Food item: " + nameToDelete + " has been deleted!");
+				foodList.remove(i);
+				isDeleted = true;
+				i++;
+			} 
+			i++;
 		}
-
-		if (isDeleted == true) {
-			System.out.println("Food item: " + nameToDelete + " has been deleted!");
-		} else {
-			System.out.println("Invalid Food Item!");
+		
+		if (isDeleted == false) {
+			System.out.println("Invalid Food Item");
 		}
-
 	}
 
 	public static void editFood(ArrayList<Food> foodList) {
-
 		Helper.line(50, "-");
 		System.out.println("Edit Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
-		String nameToEdit = Helper.readString("Enter the name of the food item you would like to edit > ");
-
 		for (Food fd : foodList) {
-
-			if (nameToEdit == fd.getName()) {
-
-				foodList.remove(fd);
-				System.out.println("Food Item named " + fd.getName() + " has been deleted");
+			double oldSellingPrice = fd.getPrice();
+			double newSellingPrice = oldSellingPrice * 1.3;
+			fd.setPrice(newSellingPrice);
+			
+			if (newSellingPrice != oldSellingPrice) {
+				System.out.println("Selling price of " + fd.getName() + "has been updated succesfully");
 			} else {
-				System.out.println("The name of the food item is invalid!");
-
-				if (nameToEdit == fd.getName()) {
-
-					double newSellingPrice = Helper.readDouble("Enter the new selling price > $");
-
-					fd.setPrice(newSellingPrice);
-
-					System.out.println("Changes made!");
-				} else {
-					System.out.println("Invalid Food Item!");
-				}
+				System.out.println("");
 			}
 		}
-
 	}
 
 	// Codes for Stall (Crystal)
@@ -507,6 +504,7 @@ public class C206_CaseStudyCodes {
 		for (PromotionOffers Promo : PromotionList) {
 			output += String.format("%-10s %-20.2f\n", Promo.getPromoName(), Promo.getPromoDiscount());
 		}
+		System.out.println(output);
 	}
 
 	public static void editPromoOffer() {

@@ -91,9 +91,14 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that the retrieved PurchaseOrderlist is empty?", testOutput, allPurchaseOrder);
 
 		allPurchaseOrder = C206_CaseStudyCodes.retrieveAllPurchaseOrder(poList);
-		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 1, "Sushi", "07/08/2021", "Rice", 2);
-		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicken", 5);
+		testOutput = String.format("%-10d %-10 s %-10s %-10s %-10d\n", 1, "Sushi", "07/08/2021", "Rice", 2);
+		testOutput = String.format("%-10d %-10s %-10s %-10s %-10d\n", 2, "Western", "07/08/2021", "Chicke ", 5);
 		assertEquals("Test that ViewAllPurchaseOrder",testOutput,allPurchaseOrder);
+	}
+
+
+	public void testViewPurchaseOrder() {
+		assertNotNull("Test if there is valid PurchaseOrder arraylist to view the purchase orders", poList);
 	}
 
 	public void testEditPurchaseOrder() {
