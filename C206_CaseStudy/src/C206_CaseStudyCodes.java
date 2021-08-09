@@ -20,9 +20,9 @@ public class C206_CaseStudyCodes {
 
 		ArrayList<Food> foodList = new ArrayList<Food>();
 		
-		Food f1 = new Food("Curry Puff", 1.50, "s1");
-		Food f2 = new Food("Fried Rice", 3.50, "s2");
-		Food f3 = new Food("Sushi", 2.00, "s3");
+		Food f1 = new Food("Curry Puff", 3.00, "s1");
+		Food f2 = new Food("Fried Rice", 4.00, "s2");
+		Food f3 = new Food("Sushi", 3.50, "s3");
 		foodList.add(f1);
 		foodList.add(f2);
 		foodList.add(f3);
