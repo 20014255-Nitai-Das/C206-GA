@@ -173,6 +173,7 @@ public class C206_CaseStudyCodes {
 		System.out.println("1. Add Stall");
 		System.out.println("2. View Stall");
 		System.out.println("3. Delete Stall");
+		System.out.println("4. Update Stall Name");
 		System.out.println("5. Back");
 	}
 
@@ -202,18 +203,6 @@ public class C206_CaseStudyCodes {
 		Helper.line(50, "-");
 		System.out.println("Customer Menu");
 		Helper.line(50, "-");
-
-	}
-
-	public static void Stall() {
-
-		Helper.line(50, "-");
-		System.out.println("Stall");
-		Helper.line(50, "-");
-		System.out.println("1. Add a New Stall");
-		System.out.println("2. View an Existing Stall ");
-		System.out.println("3. Delete an Existing Stall");
-		System.out.println("4. Quit");
 
 	}
 
@@ -447,19 +436,21 @@ public class C206_CaseStudyCodes {
 		System.out.println("Delete Exisiting Stall");
 		Helper.line(50, "-");
 		System.out.println();
-
+		
 		String deleteStall = Helper.readString("Enter Stall Name to Delete > ");
 
 		for (Stall stall : stallList) {
 			if (deleteStall == stall.getName()) {
 				stallList.remove(stall);
-				System.out.println("Stall Name:" + stall.getName() + " has been deleted successfully.");
-			} else {
-				System.out.println("Invalid Stall Name !");
-
+				System.out.println("Stall Name: " + stall.getName() + " has been deleted");
+			} 
+			else {
+				System.out.println("Invalid Stall Name!");
 			}
 		}
 	}
+
+
 
 	public static void updateStall() { // Update Stall
 		Helper.line(50, "-");
