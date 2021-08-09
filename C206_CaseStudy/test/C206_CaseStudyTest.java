@@ -19,12 +19,13 @@ public class C206_CaseStudyTest {
 
 	private ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 	
+	// Food 
 	private Food fd1;
 	private Food fd2;
 	private Food fd3;
 	
 	private ArrayList<Food> foodList = new ArrayList<Food>();
-
+    
 	public C206_CaseStudyTest() {
 		super();
 	}
@@ -43,7 +44,13 @@ public class C206_CaseStudyTest {
 
 		poList = new ArrayList<PurchaseOrder>();
 		
-		fd1 = new Food("Curry Puff", 1.50, "s1");
+		// Food 
+		
+		fd1 = new Food("Curry Puff", 3.00, "s1");
+		fd1 = new Food("Fried Rice", 4.00, "s2");
+		fd1 = new Food("Sushi", 3.50, "s3");
+		
+		foodList = new ArrayList<Food>();
 	}
 
 	public void testAddPurchaseOrder() {
@@ -72,7 +79,6 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that ViewAllPurchaseOrder",testOutput,allPurchaseOrder);
 	}
 
-	public voide
 	public void testEditPurchaseOrder() {
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to edit the purchase orders", poList);
 
@@ -83,6 +89,24 @@ public class C206_CaseStudyTest {
 
 	}
 
+	// Food 
+	public void testAddFood() {
+		
+	}
+	
+	public void testViewFood() {
+		
+	}
+	
+	public void testDeleteFood() {
+		
+	}
+	
+	public void testEditFood() {
+		
+	}
+	
+	
 	@After
 	public void tearDown() throws Exception {
 		po1 = null;
