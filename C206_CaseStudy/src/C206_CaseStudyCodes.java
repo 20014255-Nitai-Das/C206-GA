@@ -382,36 +382,22 @@ public class C206_CaseStudyCodes {
 	}
 
 	public static void editFood(ArrayList<Food> foodList) {
-
 		Helper.line(50, "-");
 		System.out.println("Edit Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
-		String nameToEdit = Helper.readString("Enter the name of the food item you would like to edit > ");
-
 		for (Food fd : foodList) {
-
-			if (nameToEdit == fd.getName()) {
-
-				foodList.remove(fd);
-				System.out.println("Food Item named " + fd.getName() + " has been deleted");
+			double oldSellingPrice = fd.getPrice();
+			double newSellingPrice = oldSellingPrice * 1.3;
+			fd.setPrice(newSellingPrice);
+			
+			if (newSellingPrice != oldSellingPrice) {
+				System.out.println("Selling price of " + fd.getName() + "has been updated succesfully");
 			} else {
-				System.out.println("The name of the food item is invalid!");
-
-				if (nameToEdit == fd.getName()) {
-
-					double newSellingPrice = Helper.readDouble("Enter the new selling price > $");
-
-					fd.setPrice(newSellingPrice);
-
-					System.out.println("Changes made!");
-				} else {
-					System.out.println("Invalid Food Item!");
-				}
+				System.out.println("");
 			}
 		}
-
 	}
 
 	// Codes for Stall (Crystal)
