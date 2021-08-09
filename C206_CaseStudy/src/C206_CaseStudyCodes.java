@@ -7,9 +7,14 @@ public class C206_CaseStudyCodes {
 
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
 
+	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 	public static void main(String[] args) {
 
-		ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
+		PurchaseOrder po1 = new PurchaseOrder(1, "Sushi", "07/08/2021", "Rice", 2);
+		poList.add(po1);
+		
+		
+		
 
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
 		Stall s2 = new Stall("Fried Rice", "03/04/2021");
@@ -236,7 +241,7 @@ public class C206_CaseStudyCodes {
 
 	// Nitai
 
-	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList) {
+	public static String retrieveAllPurchaseOrder(ArrayList<PurchaseOrder> poList2) {
 		String output = "";
 
 		for (PurchaseOrder po : poList) {
@@ -272,12 +277,12 @@ public class C206_CaseStudyCodes {
 
 		int userOrderNum = Helper.readInt("Enter Purchase Order Number > ");
 
-		for (PurchaseOrder po : poList) {
-			if (userOrderNum == po.getOrderNumber()) {
+		for (int i = 0; i < poList.size(); i++) {
+			if (userOrderNum == poList.get(i).getOrderNumber()) {
 
 				String newIngrDesc = Helper.readString("Enter New ingredients Description > ");
 
-				po.setIngrDesc(newIngrDesc);
+				poList.get(i).setIngrDesc(newIngrDesc);
 
 				System.out.println("Changes made!");
 			} else {
@@ -289,24 +294,30 @@ public class C206_CaseStudyCodes {
 
 	// Nitai
 
-	public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
-
-		Helper.line(50, "-");
-		System.out.println("Delete Purchase Order");
-		Helper.line(50, "-");
-		System.out.println();
-
-		int userOrderNum = Helper.readInt("Enter Purchase Order Number > ");
-
-		for (PurchaseOrder po : poList) {
-			if (userOrderNum == po.getOrderNumber()) {
-				poList.remove(po);
-				System.out.println("Purchase Order: " + po.getOrderNumber() + " has been deleted");
-			} else {
-				System.out.println("Invalid Purchase Order Number!");
-			}
-		}
-	}
+	  public static void deletePurchaseOrder(ArrayList<PurchaseOrder> poList) {
+		    Helper.line(50, "-");
+		      System.out.print("Delete Purchase Order\n");
+		      Helper.line(50, "-");
+		      
+		      
+		   
+		      int  poNum = Helper.readInt("Enter purchase order number > ");
+		      boolean isDeleted = false;
+		       
+		          for (int i = 0; i < poList.size(); i++) {
+		            if (poList.get(i).getOrderNumber() == poNum) {
+		              poList.remove(i);
+		              isDeleted = true;
+		        }else {
+		      isDeleted = false;
+		        }
+		            
+		      }if (isDeleted == true) {
+		        System.out.println("Purchase has been deleted successfully");
+		      }else if (isDeleted == false) {
+		        System.out.println("Purchase has not been deleted successfully");
+		      }
+		    }
 
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
