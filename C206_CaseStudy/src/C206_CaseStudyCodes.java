@@ -39,12 +39,12 @@ public class C206_CaseStudyCodes {
 
 				while (caOption != 3) {
 					CanAdmMenu();
-					caOption += Helper.readInt("Enter choice >");
+					caOption = Helper.readInt("Enter choice >");
 					if (caOption == 1) {
 						int fiOption = 0;
 						while (fiOption != 5) {
 							FoodItemMenu();
-							fiOption += Helper.readInt("Enter choice >");
+							fiOption = Helper.readInt("Enter choice >");
 
 							if (fiOption == 1) {
 								addFood(foodList);
@@ -66,6 +66,7 @@ public class C206_CaseStudyCodes {
 						while (sOption != 4) {
 							StallMenu();
 							if (sOption == 1) {
+								sOption = Helper.readInt("Enter choice >");
 								addStall();
 							} else if (sOption == 2) {
 								viewStall();   
@@ -82,7 +83,7 @@ public class C206_CaseStudyCodes {
 
 				while (ssOption != 5) {
 					StallStaffMenu();
-					ssOption += Helper.readInt("Enter choice > ");
+					ssOption = Helper.readInt("Enter choice > ");
 					if (ssOption == 1) {
 						PurchaseOrder po = inputPurchaseOrder();
 						addPurchaseOrder(poList, po);
