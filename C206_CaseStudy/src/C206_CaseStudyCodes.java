@@ -472,7 +472,7 @@ public class C206_CaseStudyCodes {
 			}
 		}
 	
-
+// codes for promotion offers (WangBo)
 	public static void addPromotionOffers() { // PromotionOffers
 		Helper.line(50, "-");
 		System.out.println("Add Promotion Offers");
@@ -500,10 +500,9 @@ public class C206_CaseStudyCodes {
 		for (PromotionOffers Promo : PromotionList) {
 			output += String.format("%-10s %-20.2f\n", Promo.getPromoName(), Promo.getPromoDiscount());
 		}
-		System.out.println(output);
 	}
 
-	public static void editPromotionOffers() {
+	public static void editPromoOffer() {
 		String editPromoOffer = Helper.readString("Enter Promotion to delete > ");
 		for (int i = 0; i < PromotionList.size(); i++) {
 			if (editPromoOffer.equalsIgnoreCase(PromotionList.get(i).getPromoName())) {
@@ -519,3 +518,4 @@ public class C206_CaseStudyCodes {
 		}
 	}
 }
+
