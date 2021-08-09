@@ -323,9 +323,8 @@ public class C206_CaseStudyCodes {
 		String stallName = Helper.readString("Enter the name of the stall selling the food > ");
 
 		Food fd = new Food(name, price, stallName);
-
 		foodList.add(fd);
-
+		
 		System.out.println("Food item was added succesfully!");
 	}
 
