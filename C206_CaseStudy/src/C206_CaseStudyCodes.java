@@ -2,35 +2,28 @@ import java.util.ArrayList;
 
 public class C206_CaseStudyCodes {
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
 
 	private static final ArrayList<PromotionOffers> PromotionList = new ArrayList<PromotionOffers>();
 	public static final ArrayList<Stall> stallList = new ArrayList<Stall>();
 
-<<<<<<< HEAD
+
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
 	public static final ArrayList<Stall> stallList = new ArrayList<Stall>();
-=======
+
 	public static void main(String[] args) {
-<<<<<<< HEAD
-=======
+
 
 
 	
 	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
 	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
 
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+
 
 	public static void main(String[] args) {
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+
 		 ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 		
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
@@ -49,182 +42,29 @@ public class C206_CaseStudyCodes {
 
 		int option = 0;
 
-		while (option != 4) {
-			userMenu();
-			option = Helper.readInt("Enter your choice > ");
 
-			if (option == 1) {
-
-				int caOption = 0;
-				
-				while (caOption != 3) {
-
-					CanAdmMenu();
-					caOption = Helper.readInt("Enter option > ");
-
-					if (caOption == 1) {
-<<<<<<< HEAD
-	
-					} else if(caOption == 2) {
-=======
-
-						addFood();
-					} 
-					else if (caOption == 2) {
-						viewFood();
-					} 
-					else if (caOption == 3) {
-						deleteFood();
-					}else if (option == 4) { 
-						System.out.println("Goodbye!");
-					}else {
-
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-						FoodItemMenu();
-
-						int fimOption = 0;
-
-						while (fimOption != 5) {
-
-							fimOption = Helper.readInt("Enter your option > ");
-							if (fimOption == 1) {
-								addFood(null);
-							} else if (fimOption == 2) {
-								viewFood();
-							} else if (fimOption == 3) {
-								deleteFood();
-							} else if (fimOption == 4) {
-								editFood(null);
-							} else {
-								System.out.println("Invalid option!");
-							}
-
-						}
-						
-				}
-				
-			
-			
-				
-			
-			
-				
-					 else if (caOption == 3) {
-						StallMenu();
-
-						int smOption = 0;
-
-						while (smOption != 6) {
-							smOption = Helper.readInt("Enter your option > ");
-
-							if (smOption == 1) {
-								addStall();
-							} else if (smOption == 2) {
-								viewStall();
-							} else if (smOption == 3) {
-								deleteStall();
-							} else if (smOption == 4) {
-								updateStall();
-							} else if (smOption == 5) {
-								System.out.println("Goodbye!");
-							} else {
-								System.out.println("Invalid option!");
-							}
-							
-							
-						
-						
-						}
-<<<<<<< HEAD
-=======
-					} else {
-
-						System.out.println("Invalid option!");
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-					}
-				}
-<<<<<<< HEAD
-			}
-				else if (option == 2) {
-=======
-
-			
-
-				} else if (option == 2) {
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-
-				int ssOption = 0;
-
-				while (ssOption != 5) {
-					StallStaffMenu();
-					ssOption = Helper.readInt("Enter option > ");
-
-					if (ssOption == 1) {
-						PurchaseOrder po = inputPurchaseOrder();
-						addPurchaseOrder(poList, po);
-					} else if (ssOption == 2) {
-						retrieveAllPurchaseOrder(poList);
-						viewPurchaseOrder(poList);
-					} else if (ssOption == 3) {
-						editPurchaseOrder(poList);
-					} else if (ssOption == 4) {
-						deletePurchaseOrder(poList);
-					} else {
-						System.out.println("Invalid option!");
-					}
-				}
-
-				
-			} else if (option == 3) {
-				CustomerMenu();
-				
-			
-				int cOption = 0;
-
-				while (cOption != 5) {
-					PromotionOffers();
-					cOption = Helper.readInt("Enter option > ");
-
-					if  (cOption == 1) {
-						addPromotionOffers();
-					}
-					else if (cOption == 2) {
-						viewPromotionOffers();
-					}
-					else if (cOption == 3) {
-						editPromotionOffers();
-					}
-<<<<<<< HEAD
-					else if (cOption == 4) {
-						
-=======
-					else if (Option == 4) {
-						editPromotionOrder();
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-					}else {
-						System.out.println("Invalid option!");
-					}
-				}
-			}
-				
-			else if (option == 4) {
-				System.out.println("Goodbye!");
-			} else {
-				System.out.println("Invalid option!");
-			}
+	while(option != 4) {
 		
+	userMenu();
+		option += Helper.readInt("Enter ");
+		
+		if (option == 1) {
+			int caOption = 0;
+			
+			while (caOption != 4) {
+				
+			}
+		}else if(option ==2) {
+			
+		}else if(option ==3 ) {
+			
+		}else if(option == 4) {
+			System.out.println("Good bye!");
 		}
 	}
-<<<<<<< HEAD
-=======
+	
 		
 }
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
-
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	public static void userMenu() {
 
 		Helper.line(50, "=");
