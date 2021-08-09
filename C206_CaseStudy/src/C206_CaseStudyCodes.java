@@ -477,7 +477,9 @@ public class C206_CaseStudyCodes {
 		}
 	}
 	
-// codes for promotion offers (WangBo)
+    // Codes for Promotion Offers (WangBo)
+	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 	public static void addPromotionOffers() { // PromotionOffers
 		Helper.line(50, "-");
 		System.out.println("Add Promotion Offers");
