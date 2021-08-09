@@ -277,7 +277,7 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 
 		int userOrderNum = Helper.readInt("Enter Purchase Order Number > ");
-
+		boolean isEdit = false;
 		for (int i = 0; i < poList.size(); i++) {
 			if (userOrderNum == poList.get(i).getOrderNumber()) {
 
@@ -285,10 +285,16 @@ public class C206_CaseStudyCodes {
 
 				poList.get(i).setIngrDesc(newIngrDesc);
 
-				System.out.println("Changes made!");
+				isEdit = true;
+				
 			} else {
-				System.out.println("Invalid Purchase Order Number!");
+				isEdit = false;
+				
 			}
+		}if(isEdit == true) {
+			System.out.println("Changes made!");
+		}else if(isEdit == false) {
+			System.out.println("Changes have not been made!");
 		}
 
 	}
