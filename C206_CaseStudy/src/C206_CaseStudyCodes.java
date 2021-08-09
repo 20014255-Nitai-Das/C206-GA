@@ -2,12 +2,28 @@ import java.util.ArrayList;
 
 public class C206_CaseStudyCodes {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	public static final ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>();
 	public static final ArrayList<Food> foodList = new ArrayList<Food>();
 	private static final ArrayList<PromotionOffers> PromotionList = new ArrayList<PromotionOffers>();
 	public static final ArrayList<Stall> stallList = new ArrayList<Stall>();
 
 	public static void main(String[] args) {
+<<<<<<< HEAD
+=======
+
+
+	
+	public static  final ArrayList<Food> foodList = new ArrayList<Food>();
+	public static  final ArrayList<Stall> stallList = new ArrayList<Stall>();
+
+
+
+	public static void main(String[] args) {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		 ArrayList<PurchaseOrder> poList = new ArrayList<PurchaseOrder>(8);
 		
 		Stall s1 = new Stall("Curry Puff", "05/06/2021");
@@ -365,8 +381,16 @@ public class C206_CaseStudyCodes {
 	// Codes for Food (Jolin)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+	public static void addFood(ArrayList<Food> foodList) {
+=======
 	public static void addFood() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Add Food Item");
 		Helper.line(50, "-");
@@ -383,8 +407,22 @@ public class C206_CaseStudyCodes {
 		System.out.println("Food item was added succesfully!");
 	}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	public static void viewFood(ArrayList<Food> foodList) {
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	public static void viewFood() { // FOOD
+<<<<<<< HEAD
 
+=======
+=======
+	public static void viewFood() {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
@@ -396,32 +434,64 @@ public class C206_CaseStudyCodes {
 		System.out.println(output);
 	}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	public static void deleteFood(ArrayList<Food> foodList) {
+=======
+<<<<<<< HEAD
+	public static void deleteFood() { // FOOD
+=======
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	public static void deleteFood() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Delete Food Item");
 		Helper.line(50, "-");
 		System.out.println();
 
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
+<<<<<<< HEAD
 
 		boolean isDeleted = false;
 
+=======
+						
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		for (Food fd : foodList) {
-			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
+			if (nameToDelete == fd.getName()) {
 				foodList.remove(fd);
+<<<<<<< HEAD
 				isDeleted = true;
+=======
+				System.out.println("Food Item: " + fd.getName() + " has been deleted");
+			} else {
+				System.out.println("Invalid Food Item!");
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 			}
 		}
+<<<<<<< HEAD
 
 		if (isDeleted == true) {
 			System.out.println("Food item: " + nameToDelete + " has been deleted!");
 		} else {
 			System.out.println("Invalid Food Item!");
 		}
+=======
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 	}
+<<<<<<< HEAD
 
 	public static void editFood() {
+=======
+	
+	public static void editFood(ArrayList<Food> foodList) {
+>>>>>>> branch 'master' of https://github.com/20014255-Nitai-Das/C206-GA.git
 		Helper.line(50, "-");
 		System.out.println("Edit Food Item");
 		Helper.line(50, "-");
