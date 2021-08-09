@@ -65,12 +65,13 @@ public class C206_CaseStudyTest {
 	}
 
 	public void testEditPurchaseOrder() {
-		assertNotNull("Test if there is valid PurchaseOrder arraylist to add to", poList);
+		assertNotNull("Test if there is valid PurchaseOrder arraylist to edit the purchase orders", poList);
 
 	}
 	
 	public void testDeletePurchaseOrder() {
-		
+		assertNotNull("Test if there is valid PurchaseOrder arraylist to delete purchase orders", poList);
+
 	}
 
 	@After
