@@ -63,11 +63,13 @@ public class C206_CaseStudyCodes {
 
 					} else if (caOption == 2) {
 						int sOption = 0;
-						while (sOption != 4) {
+						while (sOption != 5) {
 							StallMenu();
+							sOption = Helper.readInt("Enter choice >");
 							if (sOption == 1) {
-								sOption = Helper.readInt("Enter choice >");
 								addStall();
+								
+								
 							} else if (sOption == 2) {
 								viewStall();   
 							} else if (sOption == 3) {
