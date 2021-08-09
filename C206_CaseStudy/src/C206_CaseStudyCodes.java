@@ -322,9 +322,9 @@ public class C206_CaseStudyCodes {
 		System.out.println("View Food Item");
 		Helper.line(50, "-");
 
-		String output = String.format("%-15s %-20s\n", "Name of Food", "Price");
+		String output = String.format("%-15s %-8s %-16s\n", "Name of Food", "Price", "Name of Stall");
 		for (Food fd : foodList) {
-			output += String.format("%-15s $%-20.2f\n", fd.getName(), fd.getPrice());
+			output += String.format("%-15s $%-8.2f %-14s\n", fd.getName(), fd.getPrice(), fd.getStallName());
 		}
 		System.out.println(output);
 	}
@@ -338,12 +338,13 @@ public class C206_CaseStudyCodes {
 		String nameToDelete = Helper.readString("Enter the name of the food item you would like to delete > ");
 
 		for (Food fd : foodList) {
-			if (nameToDelete == fd.getName()) {
+			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
 				foodList.remove(fd);
-				System.out.println("Food Item named " + fd.getName() + " has been deleted");
+				System.out.println("Food Item named " + fd.getName() + " has been deleted!");
 			} else {
 				System.out.println("The name of the food item is invalid!");
 			}
+			break;
 		}
 	}
 	
