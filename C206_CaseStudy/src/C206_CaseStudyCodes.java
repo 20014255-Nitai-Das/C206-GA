@@ -39,8 +39,10 @@ public class C206_CaseStudyCodes {
 		
 		if (option == 1) {
 			int caOption = 0;
-			CanAdmMenu();
+			
 			while (caOption != 3) {
+				CanAdmMenu();
+				caOption += Helper.readInt("Enter choice >");
 				if(caOption ==1 ) {
 					
 				}else if(caOption ==2) {
@@ -69,9 +71,11 @@ public class C206_CaseStudyCodes {
 			
 		
 		}else if(option ==3 ) {
-			CustomerMenu();
+			
 			int cOption = 0;
 			while(cOption == 4) {
+				CustomerMenu();
+				cOption = Helper.readInt("Enter choice > ");
 				
 			if(cOption == 1) {
 				
