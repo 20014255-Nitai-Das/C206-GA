@@ -477,7 +477,7 @@ public class C206_CaseStudyCodes {
 		}
 	}
 	
-    // Codes for Promotion Offers (WangBo)
+    // Codes for Promotion Offers (Wang Bo)
 	// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	public static void addPromotionOffers() { // PromotionOffers
