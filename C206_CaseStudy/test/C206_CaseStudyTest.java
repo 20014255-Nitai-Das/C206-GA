@@ -91,19 +91,19 @@ public class C206_CaseStudyTest {
 
 	// Food 
 	public void testAddFood() {
-		
+		assertNotNull("Test that foodList is not null before a new item can be added to it", foodList);
 	}
 	
 	public void testViewFood() {
-		
+		assertNotNull("Test that foodList is not null before the food items in the menu can be viewed", foodList);
 	}
 	
 	public void testDeleteFood() {
-		
+		assertNotNull("Test that foodList is not null before an item can be deleted", foodList);
 	}
 	
 	public void testEditFood() {
-		
+		assertNotNull("Test that foodList is not null before the food items in the menu can be edited", foodList);
 	}
 	
 	
