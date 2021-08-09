@@ -363,16 +363,12 @@ public class C206_CaseStudyCodes {
 		boolean isDeleted = false;
 
 		for (Food fd : foodList) {
-			if (nameToDelete == fd.getName()) {
+			if (nameToDelete.equalsIgnoreCase(fd.getName())) {
 				foodList.remove(fd);
-
-				System.out.println("Food Item: " + fd.getName() + " has been deleted");
-			} else {
-				System.out.println("Invalid Food Item!");
-
+				isDeleted = true;
 			}
 		}
-
+		
 		if (isDeleted == true) {
 			System.out.println("Food item: " + nameToDelete + " has been deleted!");
 		} else {
