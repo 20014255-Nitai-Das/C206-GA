@@ -459,17 +459,17 @@ public class C206_CaseStudyCodes {
 		System.out.println();
 		
 		String updateName = Helper.readString("Enter Current Stall Name > "); 
-		boolean isDeleted = false;
+		boolean isUpdated = false;
 		
 			for (int i = 0; i < stallList.size(); i++ ) {			
 				if (updateName.equalsIgnoreCase(stallList.get(i).getName())) {					
 					String newName = Helper.readString("Enter New Stall Name > ");
 					stallList.get(i).setName(newName);
 					System.out.println("Name successfully updated!");
-					isDeleted = true;
+					isUpdated = true;
 				}
 			}
-			if (isDeleted == false) {
+			if (isUpdated == false) {
 				System.out.println("Invalid Stall Name");
 		}
 	}
@@ -520,7 +520,7 @@ public class C206_CaseStudyCodes {
 			else {
 				System.out.println("Item Not Found");
 			}
-		}
+    	}
 	}
 }
 
