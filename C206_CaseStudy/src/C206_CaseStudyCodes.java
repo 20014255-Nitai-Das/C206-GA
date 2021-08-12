@@ -85,7 +85,7 @@ public class C206_CaseStudyCodes {
 							}
 						}
 					}else if(caOption == 3) {
-						
+						viewPromotionOffers();
 					}
 				}
 			} else if (option == 2) {

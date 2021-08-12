@@ -108,11 +108,12 @@ public class C206_CaseStudyTest {
 		//Test if PurchaseOrderList is not null but empty
 		assertNotNull("Test if there is valid PurchaseOrder arraylist to delete purchase orders", poList);
 
+		//Test when there is no purchase order in the list the list size is 0
 		assertEquals("Test that PurchaseOrder arrayList size is 0", 0, poList.size());
 
 		//Test that when a purchase orders is removed, then the array list's size decreases 
 		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
-		C206_CaseStudyCodes.addPurchaseOrder(poList, po1);
+		C206_CaseStudyCodes.addPurchaseOrder(poList, po2);
 		poList.remove(po1);
 		assertEquals("Test that PurchaseOrder arraylist is 1 ", 1, poList.size());
 
